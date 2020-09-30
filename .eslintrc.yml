@@ -6,6 +6,7 @@ env:
 extends:
   - htmlacademy/es6
   - airbnb-typescript
+  - prettier
 
 parserOptions:
   ecmaFeatures:
@@ -29,3 +30,5 @@ rules:
     - error
     - backtick
   react/prop-types: off
+  # because of prettier
+  react/jsx-one-expression-per-line: off
