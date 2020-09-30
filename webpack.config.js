@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./src/index.ts",
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "public"),
@@ -10,20 +10,22 @@ module.exports = {
     contentBase: path.resolve(__dirname, "public"),
     open: false,
     port: 1337,
+    watchContentBase: true,
+  },
+  devtool: "source-map",
+  resolve: {
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
+    alias: {
+      "~": path.resolve(__dirname, "src/"),
+    },
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(ts|tsx)$/,
+        use: "ts-loader",
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-        },
       },
     ],
   },
-  resolve: {
-    extensions: [".js", ".jsx"],
-  },
-  devtool: "source-map",
 };

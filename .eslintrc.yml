@@ -3,16 +3,29 @@ env:
   browser: true
   commonjs: true
 
-extends: ['htmlacademy/es6', 'plugin:react/recommended']
+extends:
+  - htmlacademy/es6
+  - airbnb-typescript
 
 parserOptions:
   ecmaFeatures:
     jsx: true
   ecmaVersion: 6
   sourceType: module
+  project: ./tsconfig.json
 
-plugins: ['react']
+plugins:
+  - react
 
 settings:
+  import/resolver:
+    node:
+      extensions: ['.js', '.jsx', '.ts', '.tsx']
   react:
     version: '16'
+
+rules:
+  '@typescript-eslint/quotes':
+    - error
+    - backtick
+  react/prop-types: off
