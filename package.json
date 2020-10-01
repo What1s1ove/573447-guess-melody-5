@@ -9,15 +9,18 @@
     "eslint": "eslint --ext .tsx --ext .ts src/",
     "test": "npm run eslint"
   },
+  "dependencies": {
+    "react": "16.12.0",
+    "react-dom": "16.12.0"
+  },
   "devDependencies": {
-    "@babel/core": "7.8.7",
-    "@babel/preset-env": "7.8.7",
-    "@babel/preset-react": "7.8.3",
-    "@babel/preset-typescript": "7.10.4",
+    "@types/react": "16.9.49",
+    "@types/react-dom": "16.9.8",
     "@typescript-eslint/eslint-plugin": "4.3.0",
     "eslint": "7.10.0",
     "eslint-config-airbnb-typescript": "11.0.0",
     "eslint-config-htmlacademy": "0.5.2",
+    "eslint-config-prettier": "6.12.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsx-a11y": "6.3.1",
     "eslint-plugin-react": "7.21.2",

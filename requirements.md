@@ -11,7 +11,6 @@ npm i react@16.12 -E
 
 * axios@0.19
 * history@4.10
-* prop-types@15.7
 * react@16.12
 * react-dom@16.12
 * react-redux@7.2
@@ -22,20 +21,27 @@ npm i react@16.12 -E
 
 ## devDependencies
 
-* @babel/core@7.8
-* @babel/preset-env@7.8
-* @babel/preset-react@7.8
 * @types/jest@25.1
 * @types/react@16.9
+* @types/react-dom16.9
+* @typescript-eslint/eslint-plugin
 * axios-mock-adapter@1.17
 * babel-jest@25.1
-* babel-loader@8
 * enzyme@3.11
 * enzyme-adapter-react-16@1.15
-* eslint@5.13
+* eslint@7.10
+* eslint-config-airbnb-typescript@11.0
 * eslint-config-htmlacademy@0.5
+* eslint-config-prettier@6.12
+* eslint-plugin-import@2.22
+* eslint-plugin-jsx-a11y@6.3
 * eslint-plugin-react@7.18
+* eslint-plugin-react-hooks@4.1
+* prettier@2.1
+* stylelint-config-htmlacademy@0.1
 * jest@25.1
+* ts-loader@8.0
+* typescript@4.0
 * react-test-renderer@16.12
 * redux-devtools-extension@2.13
 * redux-mock-store@1.5
