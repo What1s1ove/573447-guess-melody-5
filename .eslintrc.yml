@@ -37,6 +37,12 @@ rules:
       imports: never
       exports: never
       functions: never
+  jsx-a11y/label-has-associated-control:
+    - error
+    - required:
+        some:
+        - nesting
+        - id
   react/prop-types: off
   # because of prettier
   react/jsx-one-expression-per-line: off
