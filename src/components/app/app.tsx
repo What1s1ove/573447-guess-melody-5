@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
+import * as React from 'react';
 import WelcomeScreen from '../welcome-screen/welcome-screen';
 
 type Props = {
   errorsCount: number;
 };
 
-const App: FC<Props> = ({ errorsCount }) => (
+const App: React.FC<Props> = ({ errorsCount }) => (
   <WelcomeScreen errorsCount={errorsCount} />
 );
 
