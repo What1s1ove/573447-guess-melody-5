@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArtistQuestionScreen component should render ArtistQuestionScreen component 1`] = `
+<section
+  class="game game--artist"
+>
+  <header
+    class="game__header"
+  >
+    <a
+      class="game__back"
+      href="#"
+    >
+      <span
+        class="visually-hidden"
+      >
+        Сыграть ещё раз
+      </span>
+      <img
+        alt="Угадай мелодию"
+        class="game__logo"
+        src="img/melody-logo-ginger.png"
+      />
+    </a>
+    <svg
+      class="timer"
+      viewBox="0 0 780 780"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        class="timer__line"
+        cx="390"
+        cy="390"
+        r="370"
+        style="filter:url(#blur);transform:rotate(-90deg) scaleY(-1);transform-origin:center"
+      />
+    </svg>
+    <div
+      class="game__mistakes"
+    >
+      <div
+        class="wrong"
+      />
+      <div
+        class="wrong"
+      />
+      <div
+        class="wrong"
+      />
+    </div>
+  </header>
+  <section
+    class="game__screen"
+  >
+    <h2
+      class="game__title"
+    >
+      Кто исполняет эту песню?
+    </h2>
+    <div
+      class="game__track"
+    >
+      <div
+        class="track"
+      >
+        <button
+          aria-label="Play track"
+          class="track__button track__button--play"
+          type="button"
+        />
+        <div
+          class="track__status"
+        >
+          <audio />
+        </div>
+      </div>
+    </div>
+    <form
+      class="game__artist"
+    >
+      <div
+        class="artist"
+      >
+        <label
+          class="artist__name"
+          for="answer-1"
+        >
+          <input
+            class="artist__input visually-hidden"
+            id="answer-1"
+            name="answer"
+            type="radio"
+            value="artist-1"
+          />
+          <img
+            alt="Пелагея"
+            class="artist__picture"
+            src="img/placeholder.jpg"
+          />
+          Пелагея
+        </label>
+      </div>
+      <div
+        class="artist"
+      >
+        <label
+          class="artist__name"
+          for="answer-2"
+        >
+          <input
+            class="artist__input visually-hidden"
+            id="answer-2"
+            name="answer"
+            type="radio"
+            value="artist-2"
+          />
+          <img
+            alt="Пелагея"
+            class="artist__picture"
+            src="img/placeholder.jpg"
+          />
+          Краснознаменная дивизия имени моей бабушки
+        </label>
+      </div>
+      <div
+        class="artist"
+      >
+        <label
+          class="artist__name"
+          for="answer-3"
+        >
+          <input
+            class="artist__input visually-hidden"
+            id="answer-3"
+            name="answer"
+            type="radio"
+            value="artist-3"
+          />
+          <img
+            alt="Пелагея"
+            class="artist__picture"
+            src="img/placeholder.jpg"
+          />
+          Lordi
+        </label>
+      </div>
+    </form>
+  </section>
+</section>
+`;
