@@ -7,18 +7,29 @@
     "build": "webpack --mode production",
     "start": "webpack-dev-server",
     "eslint": "eslint --ext .tsx --ext .ts src/",
-    "test": "npm run eslint"
+    "test": "npm run eslint && jest"
   },
   "dependencies": {
+    "enzyme": "3.11.0",
+    "enzyme-adapter-react-16": "1.15.5",
+    "enzyme-to-json": "3.6.1",
     "react": "16.12.0",
     "react-dom": "16.12.0",
     "react-router-dom": "5.1.2"
   },
   "devDependencies": {
+    "@babel/preset-env": "7.8.7",
+    "@babel/preset-react": "7.8.3",
+    "@babel/preset-typescript": "7.10.4",
+    "@types/enzyme": "3.10.7",
+    "@types/enzyme-adapter-react-16": "1.0.6",
+    "@types/enzyme-to-json": "1.5.4",
+    "@types/jest": "26.0.14",
     "@types/react": "16.9.49",
     "@types/react-dom": "16.9.8",
     "@types/react-router-dom": "5.1.5",
     "@typescript-eslint/eslint-plugin": "4.3.0",
+    "babel-jest": "25.1.0",
     "eslint": "7.10.0",
     "eslint-config-airbnb-typescript": "11.0.0",
     "eslint-config-htmlacademy": "0.5.2",
@@ -27,6 +38,7 @@
     "eslint-plugin-jsx-a11y": "6.3.1",
     "eslint-plugin-react": "7.21.2",
     "eslint-plugin-react-hooks": "4.1.2",
+    "jest": "25.1.0",
     "prettier": "2.1.2",
     "stylelint-config-htmlacademy": "0.1.4",
     "ts-loader": "8.0.4",
@@ -37,5 +49,14 @@
   },
   "engines": {
     "node": "10"
+  },
+  "jest": {
+    "verbose": true,
+    "setupFilesAfterEnv": [
+      "./src/setup-tests.ts"
+    ],
+    "snapshotSerializers": [
+      "./node_modules/enzyme-to-json/serializer"
+    ]
   }
 }
