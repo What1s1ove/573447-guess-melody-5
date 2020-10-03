@@ -1,0 +1,196 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GenreQuestionScreen component should render GenreQuestionScreen component 1`] = `
+<section
+  class="game game--genre"
+>
+  <header
+    class="game__header"
+  >
+    <a
+      class="game__back"
+      href="#"
+    >
+      <span
+        class="visually-hidden"
+      >
+        Сыграть ещё раз
+      </span>
+      <img
+        alt="Угадай мелодию"
+        class="game__logo"
+        src="img/melody-logo-ginger.png"
+      />
+    </a>
+    <svg
+      class="timer"
+      viewBox="0 0 780 780"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        class="timer__line"
+        cx="390"
+        cy="390"
+        r="370"
+        style="filter:url(#blur);transform:rotate(-90deg) scaleY(-1);transform-origin:center"
+      />
+    </svg>
+    <div
+      class="game__mistakes"
+    >
+      <div
+        class="wrong"
+      />
+      <div
+        class="wrong"
+      />
+      <div
+        class="wrong"
+      />
+    </div>
+  </header>
+  <section
+    class="game__screen"
+  >
+    <h2
+      class="game__title"
+    >
+      Выберите треки
+    </h2>
+    <form
+      class="game__tracks"
+    >
+      <div
+        class="track"
+      >
+        <button
+          aria-label="Play track"
+          class="track__button track__button--play"
+          type="button"
+        />
+        <div
+          class="track__status"
+        >
+          <audio />
+        </div>
+        <div
+          class="game__answer"
+        >
+          <input
+            class="game__input visually-hidden"
+            id="answer-1"
+            name="answer"
+            type="checkbox"
+            value="answer-1"
+          />
+          <label
+            class="game__check"
+            for="answer-1"
+          >
+            Отметить
+          </label>
+        </div>
+      </div>
+      <div
+        class="track"
+      >
+        <button
+          aria-label="Play track"
+          class="track__button track__button--play"
+          type="button"
+        />
+        <div
+          class="track__status"
+        >
+          <audio />
+        </div>
+        <div
+          class="game__answer"
+        >
+          <input
+            class="game__input visually-hidden"
+            id="answer-2"
+            name="answer"
+            type="checkbox"
+            value="answer-1"
+          />
+          <label
+            class="game__check"
+            for="answer-2"
+          >
+            Отметить
+          </label>
+        </div>
+      </div>
+      <div
+        class="track"
+      >
+        <button
+          aria-label="Play track"
+          class="track__button track__button--pause"
+          type="button"
+        />
+        <div
+          class="track__status"
+        >
+          <audio />
+        </div>
+        <div
+          class="game__answer"
+        >
+          <input
+            class="game__input visually-hidden"
+            id="answer-3"
+            name="answer"
+            type="checkbox"
+            value="answer-1"
+          />
+          <label
+            class="game__check"
+            for="answer-3"
+          >
+            Отметить
+          </label>
+        </div>
+      </div>
+      <div
+        class="track"
+      >
+        <button
+          aria-label="Play track"
+          class="track__button track__button--play"
+          type="button"
+        />
+        <div
+          class="track__status"
+        >
+          <audio />
+        </div>
+        <div
+          class="game__answer"
+        >
+          <input
+            class="game__input visually-hidden"
+            id="answer-4"
+            name="answer"
+            type="checkbox"
+            value="answer-1"
+          />
+          <label
+            class="game__check"
+            for="answer-4"
+          >
+            Отметить
+          </label>
+        </div>
+      </div>
+      <button
+        class="game__submit button"
+        type="submit"
+      >
+        Ответить
+      </button>
+    </form>
+  </section>
+</section>
+`;

@@ -1,10 +1,10 @@
-import React, { FC } from 'react';
+import * as React from 'react';
 
 type Props = {
   errorsCount: number;
 };
 
-const WelcomeScreen: FC<Props> = ({ errorsCount }) => (
+const WelcomeScreen: React.FC<Props> = ({ errorsCount }) => (
   <section className="welcome">
     <div className="welcome__logo">
       <img
