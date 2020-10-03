@@ -53,7 +53,7 @@
   "jest": {
     "verbose": true,
     "setupFilesAfterEnv": [
-      "./src/setup-tests.ts"
+      "./src/configs/setup-tests.ts"
     ],
     "snapshotSerializers": [
       "./node_modules/enzyme-to-json/serializer"
