@@ -49,14 +49,5 @@
   },
   "engines": {
     "node": "10"
-  },
-  "jest": {
-    "verbose": true,
-    "setupFilesAfterEnv": [
-      "./src/configs/setup-tests.ts"
-    ],
-    "snapshotSerializers": [
-      "./node_modules/enzyme-to-json/serializer"
-    ]
   }
 }
