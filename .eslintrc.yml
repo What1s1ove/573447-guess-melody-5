@@ -20,6 +20,10 @@ plugins:
   - react
 
 settings:
+  alias:
+    extensions: ['.ts']
+    map:
+      - ['~', './src']
   import/resolver:
     node:
       extensions: ['.js', '.jsx', '.ts', '.tsx']
@@ -27,9 +31,6 @@ settings:
     version: '16'
 
 rules:
-  import/extensions:
-  - error
-  - never
   '@typescript-eslint/quotes':
     - error
     - backtick
@@ -50,5 +51,6 @@ rules:
   react/prop-types: off
   import/prefer-default-export: off
   default-case: off
+  import/extensions: off
   # because of prettier
   react/jsx-one-expression-per-line: off
