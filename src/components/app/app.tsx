@@ -6,7 +6,7 @@ import GenreQuestionScreen from '../genre-question-screen/genre-question-screen'
 import AuthScreen from '../auth-screen/auth-screen';
 import GameOverScreen from '../game-over-screen/game-over-screen';
 import WinScreen from '../win-screen/win-screen';
-import { AppRoute } from '~/common/enums/app/app-route.enum';
+import { AppRoute } from '~/common/enums/enums';
 
 type Props = {
   errorsCount: number;
