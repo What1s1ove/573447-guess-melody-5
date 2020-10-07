@@ -27,6 +27,9 @@ settings:
     version: '16'
 
 rules:
+  import/extensions:
+  - error
+  - never
   '@typescript-eslint/quotes':
     - error
     - backtick
