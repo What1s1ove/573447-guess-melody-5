@@ -1,4 +1,5 @@
 import { generateGenreQuestion } from '~/helpers/mocks/generate-genre-question.helper';
+import { generateArtistQuestion } from '~/helpers/mocks/generate-artist-question.helper';
 import { QuestionType } from '~/common/enums/enums';
 
 const generateQuestion = (type: QuestionType) => {
@@ -7,11 +8,9 @@ const generateQuestion = (type: QuestionType) => {
       return generateGenreQuestion();
     }
     case QuestionType.ARTIST: {
-      return null;
+      return generateArtistQuestion();
     }
   }
-
-  return null;
 };
 
 export { generateQuestion };
