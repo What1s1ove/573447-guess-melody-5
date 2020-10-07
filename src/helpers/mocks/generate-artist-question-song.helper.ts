@@ -1,5 +1,5 @@
 import { ArtistName } from '~/common/enums/enums';
-import { IArtistQuestionSong } from '~/common/interfaces/game/game';
+import { IArtistQuestionSong } from '~/common/interfaces/interfaces';
 
 const generateArtistQuestionSong = (
   artist: ArtistName
