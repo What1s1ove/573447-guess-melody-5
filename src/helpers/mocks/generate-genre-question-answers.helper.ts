@@ -1,6 +1,6 @@
 import { generateGenreQuestionAnswer } from '~/helpers/mocks/generate-genre-question-answer.helper';
 import { GenreType } from '~/common/enums/enums';
-import { IGenreQuestionAnswer } from '~/common/interfaces/game/game';
+import { IGenreQuestionAnswer } from '~/common/interfaces/interfaces';
 
 const generateGenreQuestionAnswers = (
   genres: GenreType[]
