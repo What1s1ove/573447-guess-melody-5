@@ -1,7 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid, jsx-a11y/media-has-caption */
 import * as React from 'react';
+import { IGenreQuestion } from '~/common/interfaces/interfaces';
+import { BindingCb } from '~/common/types/types';
 
-const GenreQuestionScreen = () => (
+type Props = {
+  onAnswer: BindingCb;
+  question: IGenreQuestion;
+};
+
+const GenreQuestionScreen: React.FC<Props> = () => (
   <section className="game game--genre">
     <header className="game__header">
       <a className="game__back" href="#">
@@ -37,99 +44,6 @@ const GenreQuestionScreen = () => (
     </header>
     <section className="game__screen">
       <h2 className="game__title">Выберите треки</h2>
-      <form className="game__tracks">
-        <div className="track">
-          <button
-            className="track__button track__button--play"
-            type="button"
-            aria-label="Play track"
-          />
-          <div className="track__status">
-            <audio />
-          </div>
-          <div className="game__answer">
-            <input
-              className="game__input visually-hidden"
-              type="checkbox"
-              name="answer"
-              value="answer-1"
-              id="answer-1"
-            />
-            <label className="game__check" htmlFor="answer-1">
-              Отметить
-            </label>
-          </div>
-        </div>
-        <div className="track">
-          <button
-            className="track__button track__button--play"
-            type="button"
-            aria-label="Play track"
-          />
-          <div className="track__status">
-            <audio />
-          </div>
-          <div className="game__answer">
-            <input
-              className="game__input visually-hidden"
-              type="checkbox"
-              name="answer"
-              value="answer-1"
-              id="answer-2"
-            />
-            <label className="game__check" htmlFor="answer-2">
-              Отметить
-            </label>
-          </div>
-        </div>
-        <div className="track">
-          <button
-            className="track__button track__button--pause"
-            type="button"
-            aria-label="Play track"
-          />
-          <div className="track__status">
-            <audio />
-          </div>
-          <div className="game__answer">
-            <input
-              className="game__input visually-hidden"
-              type="checkbox"
-              name="answer"
-              value="answer-1"
-              id="answer-3"
-            />
-            <label className="game__check" htmlFor="answer-3">
-              Отметить
-            </label>
-          </div>
-        </div>
-        <div className="track">
-          <button
-            className="track__button track__button--play"
-            type="button"
-            aria-label="Play track"
-          />
-          <div className="track__status">
-            <audio />
-          </div>
-          <div className="game__answer">
-            <input
-              className="game__input visually-hidden"
-              type="checkbox"
-              name="answer"
-              value="answer-1"
-              id="answer-4"
-            />
-            <label className="game__check" htmlFor="answer-4">
-              Отметить
-            </label>
-          </div>
-        </div>
-        <button className="game__submit button" type="submit">
-          Ответить
-        </button>
-      </form>
     </section>
   </section>
 );
