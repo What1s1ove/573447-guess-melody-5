@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArtistQuestionAnswer component should render ArtistQuestionAnswer component 1`] = `
+<div
+  class="artist"
+>
+  <label
+    class="artist__name"
+    for="answer-1"
+  >
+    <input
+      class="artist__input visually-hidden"
+      id="answer-1"
+      name="answer"
+      type="radio"
+    />
+    <img
+      alt="Jack Daniels"
+      class="artist__picture"
+      src="https://api.adorable.io/avatars/128/0.1"
+    />
+    Jack Daniels
+  </label>
+</div>
+`;
