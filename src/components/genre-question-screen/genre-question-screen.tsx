@@ -3,7 +3,7 @@ import * as React from 'react';
 import { IGenreQuestion } from '~/common/interfaces/interfaces';
 import { BindingCb, ChangeGenreQuestionAnswerCb } from '~/common/types/types';
 import GenreQuestionAnswer from '~/components/genre-question-answer/genre-question-answer';
-import {getUpdatedAnswers} from './helpers';
+import { getUpdatedAnswers } from './helpers';
 
 const DEFAULT_ANSWERS = [false, false, false, false];
 

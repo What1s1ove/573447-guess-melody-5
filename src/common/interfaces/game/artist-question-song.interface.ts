@@ -1,7 +1,5 @@
-import { ArtistName } from '~/common/enums/enums';
-
 interface IArtistQuestionSong {
-  artist: ArtistName;
+  artist: string;
   src: string;
 }
 

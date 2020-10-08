@@ -4,12 +4,18 @@ import { generateArtistQuestionAnswer } from '~/helpers/mocks/generate-artist-qu
 import { generateArtistQuestionAnswers } from '~/helpers/mocks/generate-artist-question-answers.helper';
 import { getUniqueAnswerTypes } from '~/helpers/mocks/get-unique-answer-types.helper';
 import { IArtistQuestion } from '~/common/interfaces/interfaces';
-import { ArtistName, QuestionType } from '~/common/enums/enums';
+import { QuestionType } from '~/common/enums/enums';
 
 const CUT_GENRE_START_IDX = 0;
 const ANSWERS_COUNT = 2;
 
-const artists = Object.values(ArtistName);
+const artists = [
+  `Jim Beam`,
+  `John Snow`,
+  `Jack Daniels`,
+  `Cersei Lannister`,
+  `Billie Eilish`,
+];
 
 const generateArtistQuestion = (): IArtistQuestion => {
   const artist = getRandomItem(artists);
