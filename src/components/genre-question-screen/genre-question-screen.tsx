@@ -57,7 +57,7 @@ const GenreQuestionScreen: React.FC<Props> = ({ question, onAnswer }) => {
       </header>
       <section className="game__screen">
         <h2 className="game__title">Выберите треки</h2>
-        <form className="game__tracks">
+        <form className="game__tracks" onSubmit={onAnswer}>
           {question.answers.map((answer, idx) => {
             const isChecked = answers[idx];
 
@@ -71,11 +71,7 @@ const GenreQuestionScreen: React.FC<Props> = ({ question, onAnswer }) => {
               />
             );
           })}
-          <button
-            className="game__submit button"
-            onClick={onAnswer}
-            type="submit"
-          >
+          <button className="game__submit button" type="submit">
             Ответить
           </button>
         </form>
