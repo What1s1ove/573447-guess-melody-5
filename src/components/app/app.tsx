@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
-import WelcomeScreen from '../welcome-screen/welcome-screen';
-import AuthScreen from '../auth-screen/auth-screen';
-import GameOverScreen from '../game-over-screen/game-over-screen';
-import WinScreen from '../win-screen/win-screen';
 import { AppRoute } from '~/common/enums/enums';
 import { GameQuestion } from '~/common/types/types';
+import WelcomeScreen from '~/components/welcome-screen/welcome-screen';
+import AuthScreen from '~/components/auth-screen/auth-screen';
+import GameOverScreen from '~/components/game-over-screen/game-over-screen';
+import WinScreen from '~/components/win-screen/win-screen';
 
 type Props = {
   errorsCount: number;
