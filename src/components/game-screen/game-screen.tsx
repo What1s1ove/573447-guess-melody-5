@@ -20,10 +20,10 @@ const GameScreen: React.FC<Props> = ({ questions }) => {
   ]);
 
   const onAnswer = React.useCallback(() => {
-    const newStep = step + INCREMENT_STEP_COUNT;
-
-    setStep(newStep);
+    setStep((prevStep) => prevStep + INCREMENT_STEP_COUNT);
   }, [step]);
+
+  console.log(step);
 
   const getScreen = (question: GameQuestion) => {
     switch (question.type) {
