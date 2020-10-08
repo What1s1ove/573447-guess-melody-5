@@ -67,6 +67,7 @@ const GenreQuestionScreen: React.FC<Props> = ({ question, onAnswer }) => {
                 idx={idx}
                 isChecked={isChecked}
                 changeAnswer={changeAnswer}
+                key={answer.genre}
               />
             );
           })}

@@ -64,28 +64,30 @@ exports[`GenreQuestionScreen component should render GenreQuestionScreen compone
         class="track"
       >
         <button
-          aria-label="Play track"
+          aria-label="Play music"
           class="track__button track__button--play"
           type="button"
         />
         <div
           class="track__status"
         >
-          <audio />
+          <audio
+            src="https://upload.wikimedia.org/wikipedia/commons/4/4e/BWV_543-fugue.ogg"
+          />
         </div>
         <div
           class="game__answer"
         >
           <input
             class="game__input visually-hidden"
-            id="answer-1"
+            id="0"
             name="answer"
             type="checkbox"
-            value="answer-1"
+            value="0"
           />
           <label
             class="game__check"
-            for="answer-1"
+            for="0"
           >
             Отметить
           </label>
@@ -95,28 +97,30 @@ exports[`GenreQuestionScreen component should render GenreQuestionScreen compone
         class="track"
       >
         <button
-          aria-label="Play track"
+          aria-label="Play music"
           class="track__button track__button--play"
           type="button"
         />
         <div
           class="track__status"
         >
-          <audio />
+          <audio
+            src="https://upload.wikimedia.org/wikipedia/commons/4/4e/BWV_543-fugue.ogg"
+          />
         </div>
         <div
           class="game__answer"
         >
           <input
             class="game__input visually-hidden"
-            id="answer-2"
+            id="1"
             name="answer"
             type="checkbox"
-            value="answer-1"
+            value="1"
           />
           <label
             class="game__check"
-            for="answer-2"
+            for="1"
           >
             Отметить
           </label>
@@ -126,59 +130,30 @@ exports[`GenreQuestionScreen component should render GenreQuestionScreen compone
         class="track"
       >
         <button
-          aria-label="Play track"
-          class="track__button track__button--pause"
-          type="button"
-        />
-        <div
-          class="track__status"
-        >
-          <audio />
-        </div>
-        <div
-          class="game__answer"
-        >
-          <input
-            class="game__input visually-hidden"
-            id="answer-3"
-            name="answer"
-            type="checkbox"
-            value="answer-1"
-          />
-          <label
-            class="game__check"
-            for="answer-3"
-          >
-            Отметить
-          </label>
-        </div>
-      </div>
-      <div
-        class="track"
-      >
-        <button
-          aria-label="Play track"
+          aria-label="Play music"
           class="track__button track__button--play"
           type="button"
         />
         <div
           class="track__status"
         >
-          <audio />
+          <audio
+            src="https://upload.wikimedia.org/wikipedia/commons/4/4e/BWV_543-fugue.ogg"
+          />
         </div>
         <div
           class="game__answer"
         >
           <input
             class="game__input visually-hidden"
-            id="answer-4"
+            id="2"
             name="answer"
             type="checkbox"
-            value="answer-1"
+            value="2"
           />
           <label
             class="game__check"
-            for="answer-4"
+            for="2"
           >
             Отметить
           </label>
