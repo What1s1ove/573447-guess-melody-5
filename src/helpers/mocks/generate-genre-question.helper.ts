@@ -6,7 +6,7 @@ import { IGenreQuestion } from '~/common/interfaces/interfaces';
 import { GenreType, QuestionType } from '~/common/enums/enums';
 
 const CUT_GENRE_START_IDX = 0;
-const ANSWERS_COUNT = 2;
+const ANSWERS_COUNT = 3;
 
 const genreTypes = Object.values(GenreType);
 
