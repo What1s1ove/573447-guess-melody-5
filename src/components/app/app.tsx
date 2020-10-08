@@ -7,9 +7,11 @@ import AuthScreen from '../auth-screen/auth-screen';
 import GameOverScreen from '../game-over-screen/game-over-screen';
 import WinScreen from '../win-screen/win-screen';
 import { AppRoute } from '~/common/enums/enums';
+import { GameQuestion } from '~/common/types/types';
 
 type Props = {
   errorsCount: number;
+  questions: GameQuestion[];
 };
 
 const App: React.FC<Props> = ({ errorsCount }) => (
