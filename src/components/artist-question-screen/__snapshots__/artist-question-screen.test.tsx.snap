@@ -90,7 +90,6 @@ exports[`ArtistQuestionScreen component should render ArtistQuestionScreen compo
           <input
             class="artist__input visually-hidden"
             id="answer-0"
-            name="answer"
             type="radio"
           />
           <img
@@ -111,7 +110,6 @@ exports[`ArtistQuestionScreen component should render ArtistQuestionScreen compo
           <input
             class="artist__input visually-hidden"
             id="answer-1"
-            name="answer"
             type="radio"
           />
           <img
@@ -132,7 +130,6 @@ exports[`ArtistQuestionScreen component should render ArtistQuestionScreen compo
           <input
             class="artist__input visually-hidden"
             id="answer-2"
-            name="answer"
             type="radio"
           />
           <img

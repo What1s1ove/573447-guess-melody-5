@@ -7,8 +7,8 @@ describe(`GenreQuestionAnswer component`, () => {
   it(`should render GenreQuestionAnswer component`, () => {
     const component = render(
       <GenreQuestionAnswer
+        isChecked
         answer={mockedGenreQuestionAnswer}
-        isChecked={true}
         idx={1}
         onAnswerChange={jest.fn()}
       />

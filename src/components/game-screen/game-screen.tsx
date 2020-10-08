@@ -25,8 +25,6 @@ const GameScreen: React.FC<Props> = ({ questions }) => {
     setStep(newStep);
   }, [step]);
 
-  console.log(step);
-
   const getScreen = React.useCallback(
     (question: GameQuestion) => {
       switch (question.type) {
@@ -41,6 +39,8 @@ const GameScreen: React.FC<Props> = ({ questions }) => {
           );
         }
       }
+
+      return null;
     },
     [onAnswer]
   );
