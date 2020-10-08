@@ -55,7 +55,7 @@ exports[`GenreQuestionScreen component should render GenreQuestionScreen compone
     <h2
       class="game__title"
     >
-      Выберите треки
+      Выберите jazz треки
     </h2>
     <form
       class="game__tracks"

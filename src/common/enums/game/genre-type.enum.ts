@@ -1,7 +1,7 @@
 enum GenreType {
   ROCK = `rock`,
   BLUES = `blues`,
-  JAZZ = `jax`,
+  JAZZ = `jazz`,
   METAL = `metal`,
   POP = `pop`,
   COUNTRY = `country`,
