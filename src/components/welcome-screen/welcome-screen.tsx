@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
+import { AppRoute } from '~/common/enums/enums';
 
 type Props = {
   errorsCount: number;
@@ -14,9 +16,9 @@ const WelcomeScreen: React.FC<Props> = ({ errorsCount }) => (
         height="83"
       />
     </div>
-    <button className="welcome__button" type="button">
+    <Link className="welcome__button" to={AppRoute.GAME}>
       <span className="visually-hidden">Начать игру</span>
-    </button>
+    </Link>
     <h2 className="welcome__rules-title">Правила игры</h2>
     <p className="welcome__text">Правила просты:</p>
     <ul className="welcome__rules-list">

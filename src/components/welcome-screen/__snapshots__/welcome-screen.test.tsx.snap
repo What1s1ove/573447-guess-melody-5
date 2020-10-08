@@ -14,16 +14,16 @@ exports[`WelcomeScreen component should render WelcomeScreen component 1`] = `
       width="186"
     />
   </div>
-  <button
+  <a
     class="welcome__button"
-    type="button"
+    href="/game"
   >
     <span
       class="visually-hidden"
     >
       Начать игру
     </span>
-  </button>
+  </a>
   <h2
     class="welcome__rules-title"
   >
