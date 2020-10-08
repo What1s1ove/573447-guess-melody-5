@@ -1,8 +1,7 @@
-import { ArtistName } from '~/common/enums/enums';
 import { IArtistQuestionSong } from '~/common/interfaces/interfaces';
 
 const generateArtistQuestionSong = (
-  artist: ArtistName
+  artist: string
 ): IArtistQuestionSong => ({
   artist,
   src: `https://upload.wikimedia.org/wikipedia/commons/4/4e/BWV_543-fugue.ogg`,

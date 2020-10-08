@@ -22,14 +22,14 @@ exports[`GenreQuestionAnswer component should render GenreQuestionAnswer compone
     <input
       checked=""
       class="game__input visually-hidden"
-      id="1"
+      id="answer-1"
       name="answer"
       type="checkbox"
       value="1"
     />
     <label
       class="game__check"
-      for="1"
+      for="answer-1"
     >
       Отметить
     </label>

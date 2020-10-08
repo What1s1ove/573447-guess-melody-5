@@ -5,13 +5,13 @@ import GenreQuestionAnswer from './genre-question-answer';
 
 describe(`GenreQuestionAnswer component`, () => {
   it(`should call callback if answer change`, () => {
-    const changeAnswerCb = jest.fn();
+    const onAnswerChange = jest.fn();
     const component = shallow(
       <GenreQuestionAnswer
         answer={mockedGenreQuestionAnswer}
         isChecked={true}
         idx={1}
-        changeAnswer={changeAnswerCb}
+        onAnswerChange={onAnswerChange}
       />
     );
 
@@ -22,6 +22,6 @@ describe(`GenreQuestionAnswer component`, () => {
       },
     });
 
-    expect(changeAnswerCb).toHaveBeenCalled();
+    expect(onAnswerChange).toHaveBeenCalled();
   });
 });

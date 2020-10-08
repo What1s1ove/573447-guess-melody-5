@@ -5,18 +5,18 @@ import { ChangeArtistQuestionAnswerCb } from '~/common/types/types';
 type Props = {
   answer: IArtistQuestionAnswer;
   idx: number;
-  onChangeAnswer: ChangeArtistQuestionAnswerCb;
+  onAnswerChange: ChangeArtistQuestionAnswerCb;
 };
 
 const ArtistQuestionAnswer: React.FC<Props> = ({
   answer,
   idx,
-  onChangeAnswer,
+  onAnswerChange,
 }) => {
   const answerLabel = React.useMemo(() => `answer-${idx}`, [idx]);
 
   const handleAnswerChange = React.useCallback(() => {
-    onChangeAnswer(answer);
+    onAnswerChange(answer);
   }, []);
 
   return (

@@ -10,22 +10,28 @@ type Props = {
   answer: IGenreQuestionAnswer;
   idx: number;
   isChecked: boolean;
-  changeAnswer: ChangeGenreQuestionAnswerCb;
+  onAnswerChange: ChangeGenreQuestionAnswerCb;
 };
 
 const GenreQuestionAnswer: React.FC<Props> = ({
   idx,
   isChecked,
   answer,
-  changeAnswer,
+  onAnswerChange,
 }) => {
-  const handleAnswerChange = ({ target }: InputChangeEvent) => {
-    const { value, checked } = target;
-    changeAnswer(Number(value), checked);
-  };
+  const answerLabel = React.useMemo(() => `answer-${idx}`, [idx]);
+
+  const handleAnswerChange = React.useCallback(
+    ({ target }: InputChangeEvent) => {
+      const { value, checked } = target;
+
+      onAnswerChange(Number(value), checked);
+    },
+    []
+  );
 
   return (
-    <div key={`${answer.src}`} className="track">
+    <div className="track">
       <button
         className="track__button track__button--play"
         aria-label="Play music"
@@ -40,11 +46,11 @@ const GenreQuestionAnswer: React.FC<Props> = ({
           type="checkbox"
           name="answer"
           value={idx}
-          id={idx.toString()}
+          id={answerLabel}
           checked={isChecked}
           onChange={handleAnswerChange}
         />
-        <label className="game__check" htmlFor={idx.toString()}>
+        <label className="game__check" htmlFor={answerLabel}>
           Отметить
         </label>
       </div>

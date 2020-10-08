@@ -10,7 +10,7 @@ describe(`GenreQuestionAnswer component`, () => {
         answer={mockedGenreQuestionAnswer}
         isChecked={true}
         idx={1}
-        changeAnswer={jest.fn()}
+        onAnswerChange={jest.fn()}
       />
     );
 

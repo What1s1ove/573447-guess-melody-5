@@ -80,14 +80,14 @@ exports[`GenreQuestionScreen component should render GenreQuestionScreen compone
         >
           <input
             class="game__input visually-hidden"
-            id="0"
+            id="answer-0"
             name="answer"
             type="checkbox"
             value="0"
           />
           <label
             class="game__check"
-            for="0"
+            for="answer-0"
           >
             Отметить
           </label>
@@ -113,14 +113,14 @@ exports[`GenreQuestionScreen component should render GenreQuestionScreen compone
         >
           <input
             class="game__input visually-hidden"
-            id="1"
+            id="answer-1"
             name="answer"
             type="checkbox"
             value="1"
           />
           <label
             class="game__check"
-            for="1"
+            for="answer-1"
           >
             Отметить
           </label>
@@ -146,14 +146,14 @@ exports[`GenreQuestionScreen component should render GenreQuestionScreen compone
         >
           <input
             class="game__input visually-hidden"
-            id="2"
+            id="answer-2"
             name="answer"
             type="checkbox"
             value="2"
           />
           <label
             class="game__check"
-            for="2"
+            for="answer-2"
           >
             Отметить
           </label>

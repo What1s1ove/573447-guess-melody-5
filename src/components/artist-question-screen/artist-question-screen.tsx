@@ -13,7 +13,7 @@ type Props = {
 };
 
 const ArtistQuestionScreen: React.FC<Props> = ({ question, onAnswer }) => {
-  const onChangeAnswer: ChangeArtistQuestionAnswerCb = (answer) => {
+  const onAnswerChange: ChangeArtistQuestionAnswerCb = (answer) => {
     onAnswer(question, answer);
   };
 
@@ -70,7 +70,7 @@ const ArtistQuestionScreen: React.FC<Props> = ({ question, onAnswer }) => {
             <ArtistQuestionAnswer
               answer={answer}
               idx={idx}
-              onChangeAnswer={onChangeAnswer}
+              onAnswerChange={onAnswerChange}
               key={answer.artist}
             />
           ))}
