@@ -7,10 +7,8 @@ import { IArtistQuestion } from '~/common/interfaces/interfaces';
 import { ArtistName, QuestionType } from '~/common/enums/enums';
 
 const CUT_GENRE_START_IDX = 0;
-const ANSWERS_FULL_COUNT = 3;
-const ANSWER_COUNT_DECREMENT = 1;
+const ANSWERS_COUNT = 2;
 
-const answerCount = ANSWERS_FULL_COUNT - ANSWER_COUNT_DECREMENT;
 const artists = Object.values(ArtistName);
 
 const generateArtistQuestion = (): IArtistQuestion => {
@@ -19,7 +17,7 @@ const generateArtistQuestion = (): IArtistQuestion => {
   const answer = generateArtistQuestionAnswer(artist);
   const uniqueArtists = getUniqueAnswerTypes(artist, artists);
   const answers = generateArtistQuestionAnswers(
-    getShuffledArray(uniqueArtists.slice(CUT_GENRE_START_IDX, answerCount))
+    getShuffledArray(uniqueArtists.slice(CUT_GENRE_START_IDX, ANSWERS_COUNT))
   );
 
   return {

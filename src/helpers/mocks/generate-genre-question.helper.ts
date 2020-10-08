@@ -6,10 +6,8 @@ import { IGenreQuestion } from '~/common/interfaces/interfaces';
 import { GenreType, QuestionType } from '~/common/enums/enums';
 
 const CUT_GENRE_START_IDX = 0;
-const ANSWERS_FULL_COUNT = 3;
-const ANSWER_COUNT_DECREMENT = 1;
+const ANSWERS_COUNT = 2;
 
-const answerCount = ANSWERS_FULL_COUNT - ANSWER_COUNT_DECREMENT;
 const genreTypes = Object.values(GenreType);
 
 const generateGenreQuestion = (): IGenreQuestion => {
@@ -17,7 +15,7 @@ const generateGenreQuestion = (): IGenreQuestion => {
   const answer = generateGenreQuestionAnswer(genre);
   const uniqueGenreTypes = getUniqueAnswerTypes(genre, genreTypes);
   const answers = generateGenreQuestionAnswers(
-    getShuffledArray(uniqueGenreTypes.slice(CUT_GENRE_START_IDX, answerCount))
+    getShuffledArray(uniqueGenreTypes.slice(CUT_GENRE_START_IDX, ANSWERS_COUNT))
   );
 
   return {
