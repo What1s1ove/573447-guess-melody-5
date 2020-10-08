@@ -17,7 +17,7 @@ const ArtistQuestionAnswer: React.FC<Props> = ({
 
   const handleAnswerChange = React.useCallback(() => {
     onAnswerChange(answer);
-  }, []);
+  }, [onAnswerChange, answer]);
 
   return (
     <div className="artist">
@@ -27,7 +27,6 @@ const ArtistQuestionAnswer: React.FC<Props> = ({
           onChange={handleAnswerChange}
           id={answerLabel}
           type="radio"
-          name="answer"
         />
         <img
           className="artist__picture"

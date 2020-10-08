@@ -27,7 +27,7 @@ const GenreQuestionAnswer: React.FC<Props> = ({
 
       onAnswerChange(Number(value), checked);
     },
-    []
+    [onAnswerChange]
   );
 
   return (

@@ -20,21 +20,30 @@ const GameScreen: React.FC<Props> = ({ questions }) => {
   ]);
 
   const onAnswer = React.useCallback(() => {
-    setStep((prevStep) => prevStep + INCREMENT_STEP_COUNT);
+    const newStep = step + INCREMENT_STEP_COUNT;
+
+    setStep(newStep);
   }, [step]);
 
   console.log(step);
 
-  const getScreen = (question: GameQuestion) => {
-    switch (question.type) {
-      case QuestionType.GENRE: {
-        return <GenreQuestionScreen question={question} onAnswer={onAnswer} />;
+  const getScreen = React.useCallback(
+    (question: GameQuestion) => {
+      switch (question.type) {
+        case QuestionType.GENRE: {
+          return (
+            <GenreQuestionScreen question={question} onAnswer={onAnswer} />
+          );
+        }
+        case QuestionType.ARTIST: {
+          return (
+            <ArtistQuestionScreen question={question} onAnswer={onAnswer} />
+          );
+        }
       }
-      case QuestionType.ARTIST: {
-        return <ArtistQuestionScreen question={question} onAnswer={onAnswer} />;
-      }
-    }
-  };
+    },
+    [onAnswer]
+  );
 
   if (step >= questions.length || !currentQuestion) {
     return <Redirect to={AppRoute.ROOT} />;

@@ -34,7 +34,7 @@ const GenreQuestionScreen: React.FC<Props> = ({ question, onAnswer }) => {
 
       onAnswer(question, answers);
     },
-    [question, answers]
+    [onAnswer, question, answers]
   );
 
   return (
