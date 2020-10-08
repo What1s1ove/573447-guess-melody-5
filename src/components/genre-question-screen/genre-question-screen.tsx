@@ -1,14 +1,18 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import * as React from 'react';
 import { IGenreQuestion } from '~/common/interfaces/interfaces';
-import { BindingCb, ChangeGenreQuestionAnswerCb } from '~/common/types/types';
+import {
+  AnswerGenreQuestionCb,
+  ChangeGenreQuestionAnswerCb,
+  FormEvent,
+} from '~/common/types/types';
 import GenreQuestionAnswer from '~/components/genre-question-answer/genre-question-answer';
 import { getUpdatedAnswers } from './helpers';
 
 const DEFAULT_ANSWERS = [false, false, false, false];
 
 type Props = {
-  onAnswer: BindingCb;
+  onAnswer: AnswerGenreQuestionCb;
   question: IGenreQuestion;
 };
 
@@ -19,6 +23,12 @@ const GenreQuestionScreen: React.FC<Props> = ({ question, onAnswer }) => {
     const updatedAnswers = getUpdatedAnswers(answers, answerIdx, isChecked);
 
     setAnswers(updatedAnswers);
+  };
+
+  const handleFormSubmit = (evt: FormEvent) => {
+    evt.preventDefault();
+
+    onAnswer(question, answers);
   };
 
   return (
@@ -56,8 +66,8 @@ const GenreQuestionScreen: React.FC<Props> = ({ question, onAnswer }) => {
         </div>
       </header>
       <section className="game__screen">
-        <h2 className="game__title">Выберите треки</h2>
-        <form className="game__tracks" onSubmit={onAnswer}>
+        <h2 className="game__title">Выберите {question.genre} треки</h2>
+        <form className="game__tracks" onSubmit={handleFormSubmit}>
           {question.answers.map((answer, idx) => {
             const isChecked = answers[idx];
 
