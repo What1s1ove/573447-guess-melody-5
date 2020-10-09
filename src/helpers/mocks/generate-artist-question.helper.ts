@@ -8,8 +8,7 @@ import { QuestionType } from '~/common/enums/enums';
 
 const CUT_GENRE_START_IDX = 0;
 const ANSWERS_COUNT = 2;
-
-const artists = [
+const ARTISTS = [
   `Jim Beam`,
   `John Snow`,
   `Jack Daniels`,
@@ -18,10 +17,10 @@ const artists = [
 ];
 
 const generateArtistQuestion = (): IArtistQuestion => {
-  const artist = getRandomItem(artists);
+  const artist = getRandomItem(ARTISTS);
   const song = generateArtistQuestionSong(artist);
   const answer = generateArtistQuestionAnswer(artist);
-  const uniqueArtists = getUniqueAnswerTypes(artist, artists);
+  const uniqueArtists = getUniqueAnswerTypes(artist, ARTISTS);
   const answers = generateArtistQuestionAnswers(
     getShuffledArray(uniqueArtists.slice(CUT_GENRE_START_IDX, ANSWERS_COUNT))
   );
