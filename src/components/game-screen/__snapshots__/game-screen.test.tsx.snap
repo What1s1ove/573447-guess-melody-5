@@ -9,7 +9,7 @@ exports[`GameScreen component should render GameScreen component 1`] = `
   >
     <a
       class="game__back"
-      href="#"
+      href="/"
     >
       <span
         class="visually-hidden"

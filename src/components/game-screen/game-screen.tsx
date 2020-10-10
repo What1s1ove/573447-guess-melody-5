@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Redirect } from 'react-router-dom';
 import { AppRoute, QuestionType } from '~/common/enums/enums';
 import { GameQuestion } from '~/common/types/types';
+import GameHeader from '~/components/game-header/game-header';
 import GenreQuestionScreen from '~/components/genre-question-screen/genre-question-screen';
 import ArtistQuestionScreen from '~/components/artist-question-screen/artist-question-screen';
 
@@ -39,7 +40,12 @@ const GameScreen: React.FC<Props> = ({ questions }) => {
     return <Redirect to={AppRoute.ROOT} />;
   }
 
-  return getScreen(currentQuestion);
+  return (
+    <section className={`game game--${currentQuestion.type}`}>
+      <GameHeader />
+      {getScreen(currentQuestion)}
+    </section>
+  );
 };
 
 export default GameScreen;
