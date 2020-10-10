@@ -1,4 +1,8 @@
-import { getRandomItem, getShuffledArray } from '~/helpers/array';
+import {
+  getRandomItem,
+  getShuffledArray,
+  generateRandomId,
+} from '~/helpers/helpers';
 import {
   generateGenreQuestionAnswer,
   generateGenreQuestionAnswers,
@@ -29,6 +33,7 @@ const generateGenreQuestion = (): IGenreQuestion => {
 
   return {
     genre,
+    id: generateRandomId(),
     type: QuestionType.GENRE,
     answers: [answer, ...answers],
   };

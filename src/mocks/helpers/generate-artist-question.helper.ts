@@ -1,4 +1,4 @@
-import { getRandomItem, getShuffledArray } from '~/helpers/array';
+import { getRandomItem, getShuffledArray, generateRandomId } from '~/helpers/helpers';
 import {
   generateArtistQuestionAnswer,
   generateArtistQuestionAnswers,
@@ -36,6 +36,7 @@ const generateArtistQuestion = (): IArtistQuestion => {
 
   return {
     song,
+    id: generateRandomId(),
     type: QuestionType.ARTIST,
     answers: [answer, ...answers],
   };

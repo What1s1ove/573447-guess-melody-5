@@ -3,6 +3,7 @@ import { QuestionType } from '~/common/enums/enums';
 import { mockedArtistQuestionAnswer } from '~/mocks/game/artist-question-answer.mock';
 
 const mockedArtistQuestion: IArtistQuestion = {
+  id: `1`,
   type: QuestionType.ARTIST,
   song: {
     artist: `Jim Beam`,

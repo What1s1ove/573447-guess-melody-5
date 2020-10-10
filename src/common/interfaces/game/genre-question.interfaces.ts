@@ -1,6 +1,7 @@
 import { QuestionType } from '~/common/enums/enums';
 
 interface IGenreQuestion {
+  id: string;
   type: QuestionType.GENRE;
   genre: string;
   answers: IGenreQuestionAnswer[];

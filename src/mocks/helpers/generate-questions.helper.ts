@@ -1,4 +1,4 @@
-import { getRandomItem } from '~/helpers/array';
+import { getRandomItem } from '~/helpers/helpers';
 import { generateGenreQuestion } from '~/mocks/helpers/generate-genre-question.helper';
 import { generateArtistQuestion } from '~/mocks/helpers/generate-artist-question.helper';
 import { QuestionType } from '~/common/enums/enums';
