@@ -1,6 +1,8 @@
 import { getRandomItem, getShuffledArray } from '~/helpers/array/array';
-import { generateGenreQuestionAnswer } from '~/mocks/helpers/generate-genre-question-answer.helper';
-import { generateGenreQuestionAnswers } from '~/mocks/helpers/generate-genre-question-answers.helper';
+import {
+  generateGenreQuestionAnswer,
+  generateGenreQuestionAnswers,
+} from '~/mocks/helpers/generate-genre-question-answers.helper';
 import { getUniqueAnswerTypes } from '~/mocks/helpers/get-unique-answer-types.helper';
 import { IGenreQuestion } from '~/common/interfaces/interfaces';
 import { QuestionType } from '~/common/enums/enums';

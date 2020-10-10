@@ -1,9 +1,13 @@
 import { getRandomItem, getShuffledArray } from '~/helpers/array/array';
-import { generateArtistQuestionSong } from '~/mocks/helpers/generate-artist-question-song.helper';
-import { generateArtistQuestionAnswer } from '~/mocks/helpers/generate-artist-question-answer.helper';
-import { generateArtistQuestionAnswers } from '~/mocks/helpers/generate-artist-question-answers.helper';
+import {
+  generateArtistQuestionAnswer,
+  generateArtistQuestionAnswers,
+} from '~/mocks/helpers/generate-artist-question-answers.helper';
 import { getUniqueAnswerTypes } from '~/mocks/helpers/get-unique-answer-types.helper';
-import { IArtistQuestion } from '~/common/interfaces/interfaces';
+import {
+  IArtistQuestion,
+  IArtistQuestionSong,
+} from '~/common/interfaces/interfaces';
 import { QuestionType } from '~/common/enums/enums';
 
 const CUT_GENRE_START_IDX = 0;
@@ -15,6 +19,11 @@ const ARTISTS = [
   `Cersei Lannister`,
   `Billie Eilish`,
 ];
+
+const generateArtistQuestionSong = (artist: string): IArtistQuestionSong => ({
+  artist,
+  src: `https://upload.wikimedia.org/wikipedia/commons/4/4e/BWV_543-fugue.ogg`,
+});
 
 const generateArtistQuestion = (): IArtistQuestion => {
   const artist = getRandomItem(ARTISTS);
