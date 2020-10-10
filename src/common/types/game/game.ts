@@ -1,5 +1,32 @@
-export * from './game-question.type';
-export * from './change-genre-question-answer-cb.type';
-export * from './answer-genre-question-cb.type';
-export * from './change-artist-question-answer-cb.type';
-export * from './answer-artist-question-cb.type';
+import {
+  IArtistQuestion,
+  IGenreQuestion,
+  IArtistQuestionAnswer,
+} from '~/common/interfaces/interfaces';
+
+type GameQuestion = IGenreQuestion | IArtistQuestion;
+
+type AnswerArtistQuestionCb = (
+  question: IArtistQuestion,
+  answer: IArtistQuestionAnswer
+) => void;
+
+type ChangeArtistQuestionAnswerCb = (answer: IArtistQuestionAnswer) => void;
+
+type AnswerGenreQuestionCb = (
+  question: IGenreQuestion,
+  answers: boolean[]
+) => void;
+
+type ChangeGenreQuestionAnswerCb = (
+  answerIdx: number,
+  isChecked: boolean
+) => void;
+
+export {
+  GameQuestion,
+  AnswerArtistQuestionCb,
+  ChangeArtistQuestionAnswerCb,
+  AnswerGenreQuestionCb,
+  ChangeGenreQuestionAnswerCb,
+};

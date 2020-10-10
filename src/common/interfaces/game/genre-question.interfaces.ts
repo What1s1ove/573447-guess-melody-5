@@ -1,4 +1,3 @@
-import { IGenreQuestionAnswer } from '~/common/interfaces/game/genre-question-answer.interface';
 import { QuestionType } from '~/common/enums/enums';
 
 interface IGenreQuestion {
@@ -7,4 +6,9 @@ interface IGenreQuestion {
   answers: IGenreQuestionAnswer[];
 }
 
-export { IGenreQuestion };
+interface IGenreQuestionAnswer {
+  genre: string;
+  src: string;
+}
+
+export { IGenreQuestion, IGenreQuestionAnswer };

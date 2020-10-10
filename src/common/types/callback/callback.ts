@@ -1,1 +1,3 @@
-export * from './binding-cb.type';
+type BindingCb = () => void;
+
+export { BindingCb };
