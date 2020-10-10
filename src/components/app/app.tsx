@@ -3,7 +3,7 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import { AppRoute } from '~/common/enums/enums';
 import { GameQuestion } from '~/common/types/types';
 import WelcomeScreen from '~/components/welcome-screen/welcome-screen';
-import GameScree from '~/components/game-screen/game-screen';
+import GameScreen from '~/components/game-screen/game-screen';
 import AuthScreen from '~/components/auth-screen/auth-screen';
 import GameOverScreen from '~/components/game-over-screen/game-over-screen';
 import WinScreen from '~/components/win-screen/win-screen';
@@ -23,7 +23,7 @@ const App: React.FC<Props> = ({ questions, errorsCount }) => (
         <AuthScreen />
       </Route>
       <Route exact path={AppRoute.GAME}>
-        <GameScree questions={questions} />
+        <GameScreen questions={questions} />
       </Route>
       <Route exact path={AppRoute.RESULT}>
         <WinScreen />
