@@ -20,6 +20,10 @@ plugins:
   - react
 
 settings:
+  alias:
+    extensions: ['.ts']
+    map:
+      - ['~', './src']
   import/resolver:
     node:
       extensions: ['.js', '.jsx', '.ts', '.tsx']
@@ -46,5 +50,7 @@ rules:
         - id
   react/prop-types: off
   import/prefer-default-export: off
+  default-case: off
+  import/extensions: off
   # because of prettier
   react/jsx-one-expression-per-line: off

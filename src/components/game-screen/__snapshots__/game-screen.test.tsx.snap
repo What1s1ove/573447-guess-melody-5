@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameScreen component should render GameScreen component 1`] = `
+<section
+  class="game game--artist"
+>
+  <header
+    class="game__header"
+  >
+    <a
+      class="game__back"
+      href="/"
+    >
+      <span
+        class="visually-hidden"
+      >
+        Сыграть ещё раз
+      </span>
+      <img
+        alt="Угадай мелодию"
+        class="game__logo"
+        src="img/melody-logo-ginger.png"
+      />
+    </a>
+    <svg
+      class="timer"
+      viewBox="0 0 780 780"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        class="timer__line"
+        cx="390"
+        cy="390"
+        r="370"
+        style="filter:url(#blur);transform:rotate(-90deg) scaleY(-1);transform-origin:center"
+      />
+    </svg>
+    <div
+      class="game__mistakes"
+    >
+      <div
+        class="wrong"
+      />
+      <div
+        class="wrong"
+      />
+      <div
+        class="wrong"
+      />
+    </div>
+  </header>
+  <section
+    class="game__screen"
+  >
+    <h2
+      class="game__title"
+    >
+      Кто исполняет эту песню?
+    </h2>
+    <div
+      class="game__track"
+    >
+      <div
+        class="track"
+      >
+        <button
+          aria-label="Play track"
+          class="track__button track__button--play"
+          type="button"
+        />
+        <div
+          class="track__status"
+        >
+          <audio
+            src="https://upload.wikimedia.org/wikipedia/commons/4/4e/BWV_543-fugue.ogg"
+          />
+        </div>
+      </div>
+    </div>
+    <form
+      class="game__artist"
+    >
+      <div
+        class="artist"
+      >
+        <label
+          class="artist__name"
+          for="answer-0"
+        >
+          <input
+            class="artist__input visually-hidden"
+            id="answer-0"
+            type="radio"
+          />
+          <img
+            alt="John Snow"
+            class="artist__picture"
+            src="https://api.adorable.io/avatars/128/0.1"
+          />
+          John Snow
+        </label>
+      </div>
+      <div
+        class="artist"
+      >
+        <label
+          class="artist__name"
+          for="answer-1"
+        >
+          <input
+            class="artist__input visually-hidden"
+            id="answer-1"
+            type="radio"
+          />
+          <img
+            alt="Jim Beam"
+            class="artist__picture"
+            src="https://api.adorable.io/avatars/128/0.1"
+          />
+          Jim Beam
+        </label>
+      </div>
+      <div
+        class="artist"
+      >
+        <label
+          class="artist__name"
+          for="answer-2"
+        >
+          <input
+            class="artist__input visually-hidden"
+            id="answer-2"
+            type="radio"
+          />
+          <img
+            alt="Jack Daniels"
+            class="artist__picture"
+            src="https://api.adorable.io/avatars/128/0.1"
+          />
+          Jack Daniels
+        </label>
+      </div>
+    </form>
+  </section>
+</section>
+`;

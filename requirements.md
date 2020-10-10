@@ -37,6 +37,7 @@ npm i react@16.12 -E
 * eslint-plugin-jsx-a11y@6.3
 * eslint-plugin-react@7.18
 * eslint-plugin-react-hooks@4.1
+* eslint-import-resolver-alias@1.1.2
 * prettier@2.1
 * stylelint-config-htmlacademy@0.1
 * jest@25.1
