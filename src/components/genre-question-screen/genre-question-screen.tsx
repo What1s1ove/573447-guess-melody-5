@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import * as React from 'react';
 import { IGenreQuestion } from '~/common/interfaces/interfaces';
 import {
@@ -35,60 +34,26 @@ const GenreQuestionScreen: React.FC<Props> = ({ question, onAnswer }) => {
   };
 
   return (
-    <section className="game game--genre">
-      <header className="game__header">
-        <a className="game__back" href="#">
-          <span className="visually-hidden">Сыграть ещё раз</span>
-          <img
-            className="game__logo"
-            src="img/melody-logo-ginger.png"
-            alt="Угадай мелодию"
-          />
-        </a>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="timer"
-          viewBox="0 0 780 780"
-        >
-          <circle
-            className="timer__line"
-            cx="390"
-            cy="390"
-            r="370"
-            style={{
-              filter: `url(#blur)`,
-              transform: `rotate(-90deg) scaleY(-1)`,
-              transformOrigin: `center`,
-            }}
-          />
-        </svg>
-        <div className="game__mistakes">
-          <div className="wrong" />
-          <div className="wrong" />
-          <div className="wrong" />
-        </div>
-      </header>
-      <section className="game__screen">
-        <h2 className="game__title">Выберите {question.genre} треки</h2>
-        <form className="game__tracks" onSubmit={handleFormSubmit}>
-          {question.answers.map((answer, idx) => {
-            const isChecked = answers[idx];
+    <section className="game__screen">
+      <h2 className="game__title">Выберите {question.genre} треки</h2>
+      <form className="game__tracks" onSubmit={handleFormSubmit}>
+        {question.answers.map((answer, idx) => {
+          const isChecked = answers[idx];
 
-            return (
-              <GenreQuestionAnswer
-                answer={answer}
-                idx={idx}
-                isChecked={isChecked}
-                onAnswerChange={onAnswerChange}
-                key={answer.genre}
-              />
-            );
-          })}
-          <button className="game__submit button" type="submit">
-            Ответить
-          </button>
-        </form>
-      </section>
+          return (
+            <GenreQuestionAnswer
+              answer={answer}
+              idx={idx}
+              isChecked={isChecked}
+              onAnswerChange={onAnswerChange}
+              key={answer.genre}
+            />
+          );
+        })}
+        <button className="game__submit button" type="submit">
+          Ответить
+        </button>
+      </form>
     </section>
   );
 };
