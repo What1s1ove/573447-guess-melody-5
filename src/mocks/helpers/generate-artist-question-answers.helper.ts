@@ -1,4 +1,4 @@
-import { generateArtistQuestionAnswer } from '~/helpers/mocks/generate-artist-question-answer.helper';
+import { generateArtistQuestionAnswer } from '~/mocks/helpers/generate-artist-question-answer.helper';
 import { IArtistQuestionAnswer } from '~/common/interfaces/interfaces';
 
 const generateArtistQuestionAnswers = (

@@ -1,5 +1,5 @@
-import { generateGenreQuestion } from '~/helpers/mocks/generate-genre-question.helper';
-import { generateArtistQuestion } from '~/helpers/mocks/generate-artist-question.helper';
+import { generateGenreQuestion } from '~/mocks/helpers/generate-genre-question.helper';
+import { generateArtistQuestion } from '~/mocks/helpers/generate-artist-question.helper';
 import { QuestionType } from '~/common/enums/enums';
 import { GameQuestion } from '~/common/types/types';
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app/app';
-import { generateQuestions } from '~/helpers/helpers';
+import { generateQuestions } from '~/mocks/helpers/helpers';
 
 const QUESTION_COUNT = 5;
 

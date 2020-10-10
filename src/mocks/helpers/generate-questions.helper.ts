@@ -1,5 +1,5 @@
 import { getRandomItem } from '~/helpers/array/array';
-import { generateQuestion } from '~/helpers/mocks/generate-question.helper';
+import { generateQuestion } from '~/mocks/helpers/generate-question.helper';
 import { QuestionType } from '~/common/enums/enums';
 import { GameQuestion } from '~/common/types/types';
 

@@ -1,4 +1,4 @@
-import { generateGenreQuestionAnswer } from '~/helpers/mocks/generate-genre-question-answer.helper';
+import { generateGenreQuestionAnswer } from '~/mocks/helpers/generate-genre-question-answer.helper';
 import { IGenreQuestionAnswer } from '~/common/interfaces/interfaces';
 
 const generateGenreQuestionAnswers = (
