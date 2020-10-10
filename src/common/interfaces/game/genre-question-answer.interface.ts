@@ -1,7 +1,5 @@
-import { GenreType } from '~/common/enums/enums';
-
 interface IGenreQuestionAnswer {
-  genre: GenreType;
+  genre: string;
   src: string;
 }
 
