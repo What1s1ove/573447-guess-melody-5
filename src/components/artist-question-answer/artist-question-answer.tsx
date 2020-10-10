@@ -13,11 +13,11 @@ const ArtistQuestionAnswer: React.FC<Props> = ({
   idx,
   onAnswerChange,
 }) => {
-  const answerLabel = React.useMemo(() => `answer-${idx}`, [idx]);
+  const answerLabel = `answer-${idx}`;
 
-  const handleAnswerChange = React.useCallback(() => {
+  const handleAnswerChange = () => {
     onAnswerChange(answer);
-  }, [onAnswerChange, answer]);
+  };
 
   return (
     <div className="artist">

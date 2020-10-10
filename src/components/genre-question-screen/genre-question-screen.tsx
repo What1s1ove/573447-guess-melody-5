@@ -19,23 +19,20 @@ type Props = {
 const GenreQuestionScreen: React.FC<Props> = ({ question, onAnswer }) => {
   const [answers, setAnswers] = React.useState<boolean[]>(DEFAULT_ANSWERS);
 
-  const onAnswerChange: ChangeGenreQuestionAnswerCb = React.useCallback(
-    (answerIdx, isChecked) => {
-      const updatedAnswers = getUpdatedAnswers(answers, answerIdx, isChecked);
+  const onAnswerChange: ChangeGenreQuestionAnswerCb = (
+    answerIdx,
+    isChecked
+  ) => {
+    const updatedAnswers = getUpdatedAnswers(answers, answerIdx, isChecked);
 
-      setAnswers(updatedAnswers);
-    },
-    [answers]
-  );
+    setAnswers(updatedAnswers);
+  };
 
-  const handleFormSubmit = React.useCallback(
-    (evt: FormEvent) => {
-      evt.preventDefault();
+  const handleFormSubmit = (evt: FormEvent) => {
+    evt.preventDefault();
 
-      onAnswer(question, answers);
-    },
-    [onAnswer, question, answers]
-  );
+    onAnswer(question, answers);
+  };
 
   return (
     <section className="game game--genre">

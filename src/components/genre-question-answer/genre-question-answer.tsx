@@ -19,16 +19,13 @@ const GenreQuestionAnswer: React.FC<Props> = ({
   answer,
   onAnswerChange,
 }) => {
-  const answerLabel = React.useMemo(() => `answer-${idx}`, [idx]);
+  const answerLabel = `answer-${idx}`;
 
-  const handleAnswerChange = React.useCallback(
-    ({ target }: InputChangeEvent) => {
-      const { value, checked } = target;
+  const handleAnswerChange = ({ target }: InputChangeEvent) => {
+    const { value, checked } = target;
 
-      onAnswerChange(Number(value), checked);
-    },
-    [onAnswerChange]
-  );
+    onAnswerChange(Number(value), checked);
+  };
 
   return (
     <div className="track">

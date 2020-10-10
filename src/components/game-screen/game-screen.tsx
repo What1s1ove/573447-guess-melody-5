@@ -14,36 +14,26 @@ type Props = {
 
 const GameScreen: React.FC<Props> = ({ questions }) => {
   const [step, setStep] = React.useState<number>(DEFAULT_STEP);
-  const currentQuestion = React.useMemo(() => questions[step], [
-    step,
-    questions,
-  ]);
+  const currentQuestion = questions[step];
 
-  const onAnswer = React.useCallback(() => {
+  const onAnswer = () => {
     const newStep = step + INCREMENT_STEP_COUNT;
 
     setStep(newStep);
-  }, [step]);
+  };
 
-  const getScreen = React.useCallback(
-    (question: GameQuestion) => {
-      switch (question.type) {
-        case QuestionType.GENRE: {
-          return (
-            <GenreQuestionScreen question={question} onAnswer={onAnswer} />
-          );
-        }
-        case QuestionType.ARTIST: {
-          return (
-            <ArtistQuestionScreen question={question} onAnswer={onAnswer} />
-          );
-        }
+  const getScreen = (question: GameQuestion) => {
+    switch (question.type) {
+      case QuestionType.GENRE: {
+        return <GenreQuestionScreen question={question} onAnswer={onAnswer} />;
       }
+      case QuestionType.ARTIST: {
+        return <ArtistQuestionScreen question={question} onAnswer={onAnswer} />;
+      }
+    }
 
-      return null;
-    },
-    [onAnswer]
-  );
+    return null;
+  };
 
   if (step >= questions.length || !currentQuestion) {
     return <Redirect to={AppRoute.ROOT} />;
