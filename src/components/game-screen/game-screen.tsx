@@ -26,10 +26,22 @@ const GameScreen: React.FC<Props> = ({ questions }) => {
   const getScreen = (question: GameQuestion) => {
     switch (question.type) {
       case QuestionType.GENRE: {
-        return <GenreQuestionScreen question={question} onAnswer={onAnswer} />;
+        return (
+          <GenreQuestionScreen
+            question={question}
+            onAnswer={onAnswer}
+            key={question.id}
+          />
+        );
       }
       case QuestionType.ARTIST: {
-        return <ArtistQuestionScreen question={question} onAnswer={onAnswer} />;
+        return (
+          <ArtistQuestionScreen
+            question={question}
+            onAnswer={onAnswer}
+            key={question.id}
+          />
+        );
       }
     }
 
