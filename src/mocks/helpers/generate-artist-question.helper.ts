@@ -1,4 +1,4 @@
-import { getRandomItem, getShuffledArray } from '~/helpers/array/array';
+import { getRandomItem, getShuffledArray } from '~/helpers/array';
 import {
   generateArtistQuestionAnswer,
   generateArtistQuestionAnswers,

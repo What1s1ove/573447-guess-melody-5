@@ -1,2 +1,3 @@
-export * from './array/array';
-export * from './number/number';
+export * from './array';
+export * from './number';
+export * from './string';

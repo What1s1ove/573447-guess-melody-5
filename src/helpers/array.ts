@@ -1,4 +1,4 @@
-import { getRandomNumber } from '~/helpers/number/number';
+import { getRandomNumber } from '~/helpers/number';
 
 const RANDOM_SEPARATOR = 0.5;
 
