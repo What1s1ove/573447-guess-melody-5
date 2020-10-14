@@ -14,13 +14,10 @@ const withActivePlayer = <P extends WithActivePlayer>(
   Component: React.ComponentType<P>
 ) => {
   const WithActivePlayer: React.FC<Subtract<P, WithActivePlayer>> = (props) => {
-    const [activePlayerId, setPlayerId] = React.useState<number>(
-      DEFAULT_PLAYER_ID
-    );
+    const [activePlayerId, setPlayerId] = React.useState<number>(DEFAULT_PLAYER_ID);
 
     const onPlayBtnClick = (playerId: number) => {
-      const updatedPlayerId =
-        activePlayerId === playerId ? IDX_NOT_FOUND : playerId;
+      const updatedPlayerId = activePlayerId === playerId ? IDX_NOT_FOUND : playerId;
 
       setPlayerId(updatedPlayerId);
     };

@@ -20,6 +20,12 @@ const AudioPlayer: React.FC<Props> = ({ isPlaying, src, onPlayBtnClick }) => {
   React.useEffect(() => {
     const audioNode = audioPlayerRef.current as HTMLAudioElement;
 
+    isPlaying ? audioNode.play() : audioNode.pause();
+  }, [isPlaying]);
+
+  React.useEffect(() => {
+    const audioNode = audioPlayerRef.current as HTMLAudioElement;
+
     audioNode.addEventListener(`canplaythrough`, handlePlayerCanplaythrough);
 
     audioNode.src = src;
