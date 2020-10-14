@@ -36,9 +36,9 @@ const generateArtistQuestion = (): IArtistQuestion => {
 
   return {
     song,
+    answers: [answer, ...answers],
     id: generateRandomId(),
     type: QuestionType.ARTIST,
-    answers: [answer, ...answers],
   };
 };
 

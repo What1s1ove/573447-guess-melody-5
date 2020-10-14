@@ -1,9 +1,9 @@
 enum AppRoute {
-  ROOT = `/`,
-  LOGIN = `/login`,
   GAME = `/game`,
-  RESULT = `/result`,
+  LOGIN = `/login`,
   LOSE = `/lose`,
+  RESULT = `/result`,
+  ROOT = `/`,
 }
 
 export { AppRoute };

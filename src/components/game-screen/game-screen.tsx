@@ -32,18 +32,18 @@ const GameScreen: React.FC<Props> = ({ questions }) => {
       case QuestionType.GENRE: {
         return (
           <GenreQuestionScreenWrapped
-            question={question}
-            onAnswer={onAnswer}
             key={question.id}
+            onAnswer={onAnswer}
+            question={question}
           />
         );
       }
       case QuestionType.ARTIST: {
         return (
           <ArtistQuestionScreenWrapped
-            question={question}
-            onAnswer={onAnswer}
             key={question.id}
+            onAnswer={onAnswer}
+            question={question}
           />
         );
       }

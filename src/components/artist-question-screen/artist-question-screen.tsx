@@ -11,14 +11,14 @@ import ArtistQuestionAnswer from '~/components/artist-question-answer/artist-que
 const PLAYER_IDX = 0;
 
 type Props = {
-  question: IArtistQuestion;
   onAnswer: AnswerArtistQuestionCb;
+  question: IArtistQuestion;
 };
 
 const ArtistQuestionScreen: React.FC<Props & WithActivePlayer> = ({
+  onAnswer,
   question,
   renderPlayer,
-  onAnswer,
 }) => {
   const onAnswerChange: ChangeArtistQuestionAnswerCb = (answer) => {
     onAnswer(question, answer);

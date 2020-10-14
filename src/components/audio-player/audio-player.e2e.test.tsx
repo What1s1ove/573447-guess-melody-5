@@ -7,9 +7,9 @@ describe(`AudioPlayer component`, () => {
     const onPlayBtnClick = jest.fn();
     const component = shallow(
       <AudioPlayer
-        src="play.src"
         isPlaying={false}
         onPlayBtnClick={onPlayBtnClick}
+        src="play.src"
       />
     );
 
