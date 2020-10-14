@@ -6,9 +6,9 @@ describe(`AudioPlayer component`, () => {
   it(`should render AudioPlayer component`, () => {
     const component = render(
       <AudioPlayer
-        src="play.src"
         isPlaying={false}
         onPlayBtnClick={jest.fn()}
+        src="play.src"
       />
     );
 

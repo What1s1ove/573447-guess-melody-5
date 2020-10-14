@@ -7,11 +7,11 @@ describe(`GenreQuestionAnswer component`, () => {
   it(`should render GenreQuestionAnswer component`, () => {
     const component = render(
       <GenreQuestionAnswer
-        isChecked
         answer={mockedGenreQuestionAnswer}
         idx={1}
-        renderPlayer={jest.fn()}
+        isChecked
         onAnswerChange={jest.fn()}
+        renderPlayer={jest.fn()}
       />
     );
 

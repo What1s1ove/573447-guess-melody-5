@@ -17,9 +17,9 @@ type Props = {
 };
 
 const GenreQuestionScreen: React.FC<Props & WithActivePlayer> = ({
+  onAnswer,
   question,
   renderPlayer,
-  onAnswer,
 }) => {
   const [answers, setAnswers] = React.useState<boolean[]>(DEFAULT_ANSWERS);
 

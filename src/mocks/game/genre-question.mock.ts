@@ -3,9 +3,6 @@ import { QuestionType } from '~/common/enums/enums';
 import { mockedGenreQuestionAnswer } from '~/mocks/game/genre-question-answer.mock';
 
 const mockedGenreQuestion: IGenreQuestion = {
-  id: `1`,
-  type: QuestionType.GENRE,
-  genre: `jazz`,
   answers: [
     {
       genre: `jazz`,
@@ -17,6 +14,9 @@ const mockedGenreQuestion: IGenreQuestion = {
     },
     mockedGenreQuestionAnswer,
   ],
+  genre: `jazz`,
+  id: `1`,
+  type: QuestionType.GENRE,
 };
 
 export { mockedGenreQuestion };

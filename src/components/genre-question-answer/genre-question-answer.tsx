@@ -11,8 +11,8 @@ type Props = {
   answer: IGenreQuestionAnswer;
   idx: number;
   isChecked: boolean;
-  renderPlayer: RenderPlayerCb;
   onAnswerChange: ChangeGenreQuestionAnswerCb;
+  renderPlayer: RenderPlayerCb;
 };
 
 const GenreQuestionAnswer: React.FC<Props> = ({

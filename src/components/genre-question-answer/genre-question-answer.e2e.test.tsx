@@ -8,11 +8,11 @@ describe(`GenreQuestionAnswer component`, () => {
     const onAnswerChange = jest.fn();
     const component = shallow(
       <GenreQuestionAnswer
-        isChecked
         answer={mockedGenreQuestionAnswer}
         idx={1}
-        renderPlayer={jest.fn()}
+        isChecked
         onAnswerChange={onAnswerChange}
+        renderPlayer={jest.fn()}
       />
     );
 

@@ -4,9 +4,9 @@ import clsx from 'clsx';
 import { BindingCb } from '~/common/types/types';
 
 type Props = {
-  src: string;
   isPlaying: boolean;
   onPlayBtnClick: BindingCb;
+  src: string;
 };
 
 const AudioPlayer: React.FC<Props> = ({ isPlaying, src, onPlayBtnClick }) => {

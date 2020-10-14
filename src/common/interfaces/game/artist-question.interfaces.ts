@@ -1,10 +1,10 @@
 import { QuestionType } from '~/common/enums/enums';
 
 interface IArtistQuestion {
-  id: string;
-  type: QuestionType.ARTIST;
-  song: IArtistQuestionSong;
   answers: IArtistQuestionAnswer[];
+  id: string;
+  song: IArtistQuestionSong;
+  type: QuestionType.ARTIST;
 }
 
 interface IArtistQuestionSong {
@@ -13,8 +13,8 @@ interface IArtistQuestionSong {
 }
 
 interface IArtistQuestionAnswer {
-  picture: string;
   artist: string;
+  picture: string;
 }
 
 export { IArtistQuestion, IArtistQuestionSong, IArtistQuestionAnswer };

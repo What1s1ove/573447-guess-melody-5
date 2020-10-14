@@ -1,6 +1,6 @@
 enum QuestionType {
-  GENRE = `genre`,
   ARTIST = `artist`,
+  GENRE = `genre`,
 }
 
 export { QuestionType };
