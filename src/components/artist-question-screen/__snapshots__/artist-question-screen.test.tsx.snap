@@ -34,7 +34,7 @@ exports[`ArtistQuestionScreen component should render ArtistQuestionScreen compo
         <img
           alt="John Snow"
           class="artist__picture"
-          src="https://api.adorable.io/avatars/128/0.1"
+          src="https://via.placeholder.com/135"
         />
         John Snow
       </label>
@@ -54,7 +54,7 @@ exports[`ArtistQuestionScreen component should render ArtistQuestionScreen compo
         <img
           alt="Jim Beam"
           class="artist__picture"
-          src="https://api.adorable.io/avatars/128/0.1"
+          src="https://via.placeholder.com/135"
         />
         Jim Beam
       </label>
@@ -74,7 +74,7 @@ exports[`ArtistQuestionScreen component should render ArtistQuestionScreen compo
         <img
           alt="Jack Daniels"
           class="artist__picture"
-          src="https://api.adorable.io/avatars/128/0.1"
+          src="https://via.placeholder.com/135"
         />
         Jack Daniels
       </label>

@@ -65,14 +65,16 @@ exports[`GameScreen component should render GameScreen component 1`] = `
       >
         <button
           aria-label="Play track"
-          class="track__button track__button--play"
+          class="track__button track__button--pause"
           disabled=""
           type="button"
         />
         <div
           class="track__status"
         >
-          <audio />
+          <audio
+            autoplay=""
+          />
         </div>
       </div>
     </div>
@@ -94,7 +96,7 @@ exports[`GameScreen component should render GameScreen component 1`] = `
           <img
             alt="John Snow"
             class="artist__picture"
-            src="https://api.adorable.io/avatars/128/0.1"
+            src="https://via.placeholder.com/135"
           />
           John Snow
         </label>
@@ -114,7 +116,7 @@ exports[`GameScreen component should render GameScreen component 1`] = `
           <img
             alt="Jim Beam"
             class="artist__picture"
-            src="https://api.adorable.io/avatars/128/0.1"
+            src="https://via.placeholder.com/135"
           />
           Jim Beam
         </label>
@@ -134,7 +136,7 @@ exports[`GameScreen component should render GameScreen component 1`] = `
           <img
             alt="Jack Daniels"
             class="artist__picture"
-            src="https://api.adorable.io/avatars/128/0.1"
+            src="https://via.placeholder.com/135"
           />
           Jack Daniels
         </label>
