@@ -9,22 +9,23 @@ type Props = {
   onPlayBtnClick: BindingCb;
 };
 
-const AudioPlayer: React.FC<Props> = ({ isPlaying, onPlayBtnClick }) => {
+const AudioPlayer: React.FC<Props> = ({ isPlaying, src, onPlayBtnClick }) => {
   const [isLoading, setIsLoading] = React.useState<boolean>(true);
-  const audioPlayerRef = React.useRef<null | HTMLAudioElement>(null);
+  const audioPlayerRef = React.useRef<HTMLAudioElement | null>(null);
 
   const handlePlayerCanplaythrough = () => {
     setIsLoading(false);
   };
 
   React.useEffect(() => {
-    audioPlayerRef.current?.addEventListener(
-      `canplaythrough`,
-      handlePlayerCanplaythrough
-    );
+    const audioNode = audioPlayerRef.current as HTMLAudioElement;
+
+    audioNode.addEventListener(`canplaythrough`, handlePlayerCanplaythrough);
+
+    audioNode.src = src;
 
     return () => {
-      audioPlayerRef.current?.removeEventListener(
+      audioNode.removeEventListener(
         `canplaythrough`,
         handlePlayerCanplaythrough
       );

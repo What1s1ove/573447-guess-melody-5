@@ -7,9 +7,7 @@ const DEFAULT_PLAYER_ID = 1;
 
 const withActivePlayer = <T extends {}>(Component: React.FC<T>) => {
   const WithActivePlayer: React.FC<T> = (props) => {
-    const [activePlayerId, setPlayerId] = React.useState<number>(
-      DEFAULT_PLAYER_ID
-    );
+    const [activePlayerId, setPlayerId] = React.useState<number>(DEFAULT_PLAYER_ID);
 
     const onPlayBtnClick = (playerId: number) => {
       const updatedPlayerId = activePlayerId === playerId ? IDX_NOT_FOUND : playerId;
