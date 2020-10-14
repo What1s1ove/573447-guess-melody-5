@@ -4,11 +4,12 @@ import clsx from 'clsx';
 import { BindingCb } from '~/common/types/types';
 
 type Props = {
+  src: string;
   isPlaying: boolean;
-  onPlayButtonClick: BindingCb;
+  onPlayBtnClick: BindingCb;
 };
 
-const AudioPlayer: React.FC<Props> = ({ isPlaying, onPlayButtonClick }) => {
+const AudioPlayer: React.FC<Props> = ({ isPlaying, onPlayBtnClick }) => {
   const [isLoading, setIsLoading] = React.useState<boolean>(true);
   const audioPlayerRef = React.useRef<null | HTMLAudioElement>(null);
 
@@ -39,7 +40,7 @@ const AudioPlayer: React.FC<Props> = ({ isPlaying, onPlayButtonClick }) => {
         )}
         type="button"
         disabled={isLoading}
-        onClick={onPlayButtonClick}
+        onClick={onPlayBtnClick}
         aria-label="Play track"
       />
       <div className="track__status">

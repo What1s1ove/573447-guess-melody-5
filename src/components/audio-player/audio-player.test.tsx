@@ -5,7 +5,11 @@ import AudioPlayer from './audio-player';
 describe(`AudioPlayer component`, () => {
   it(`should render AudioPlayer component`, () => {
     const component = render(
-      <AudioPlayer isPlaying={false} onPlayButtonClick={jest.fn()} />
+      <AudioPlayer
+        src="play.src"
+        isPlaying={false}
+        onPlayBtnClick={jest.fn()}
+      />
     );
 
     expect(component).toMatchSnapshot();

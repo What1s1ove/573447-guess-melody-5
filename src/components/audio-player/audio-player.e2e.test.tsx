@@ -4,13 +4,17 @@ import AudioPlayer from './audio-player';
 
 describe(`AudioPlayer component`, () => {
   it(`should call callback if play button click`, () => {
-    const onPlayButtonClick = jest.fn();
+    const onPlayBtnClick = jest.fn();
     const component = shallow(
-      <AudioPlayer isPlaying={false} onPlayButtonClick={onPlayButtonClick} />
+      <AudioPlayer
+        src="play.src"
+        isPlaying={false}
+        onPlayBtnClick={onPlayBtnClick}
+      />
     );
 
     component.find(`.track__button`).simulate(`click`);
 
-    expect(onPlayButtonClick).toHaveBeenCalled();
+    expect(onPlayBtnClick).toHaveBeenCalled();
   });
 });
