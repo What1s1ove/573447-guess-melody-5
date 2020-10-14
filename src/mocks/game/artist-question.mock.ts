@@ -11,11 +11,11 @@ const mockedArtistQuestion: IArtistQuestion = {
   },
   answers: [
     {
-      picture: `https://api.adorable.io/avatars/128/0.1`,
+      picture: `https://via.placeholder.com/135`,
       artist: `John Snow`,
     },
     {
-      picture: `https://api.adorable.io/avatars/128/0.1`,
+      picture: `https://via.placeholder.com/135`,
       artist: `Jim Beam`,
     },
     mockedArtistQuestionAnswer,
