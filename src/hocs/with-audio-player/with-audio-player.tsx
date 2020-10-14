@@ -8,7 +8,7 @@ import {
 } from '~/common/types/types';
 import AudioPlayer from '~/components/audio-player/audio-player';
 
-const DEFAULT_PLAYER_ID = 1;
+const DEFAULT_PLAYER_ID = 0;
 
 const withActivePlayer = <P extends WithActivePlayer>(
   Component: React.ComponentType<P>
