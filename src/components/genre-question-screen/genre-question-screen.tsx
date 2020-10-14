@@ -4,6 +4,7 @@ import {
   AnswerGenreQuestionCb,
   ChangeGenreQuestionAnswerCb,
   FormEvent,
+  WithActivePlayer,
 } from '~/common/types/types';
 import GenreQuestionAnswer from '~/components/genre-question-answer/genre-question-answer';
 import { getUpdatedAnswers } from './helpers';
@@ -15,7 +16,11 @@ type Props = {
   question: IGenreQuestion;
 };
 
-const GenreQuestionScreen: React.FC<Props> = ({ question, onAnswer }) => {
+const GenreQuestionScreen: React.FC<Props & WithActivePlayer> = ({
+  question,
+  renderPlayer,
+  onAnswer,
+}) => {
   const [answers, setAnswers] = React.useState<boolean[]>(DEFAULT_ANSWERS);
 
   const onAnswerChange: ChangeGenreQuestionAnswerCb = (
@@ -45,6 +50,7 @@ const GenreQuestionScreen: React.FC<Props> = ({ question, onAnswer }) => {
               answer={answer}
               idx={idx}
               isChecked={isChecked}
+              renderPlayer={renderPlayer}
               onAnswerChange={onAnswerChange}
               key={answer.genre}
             />

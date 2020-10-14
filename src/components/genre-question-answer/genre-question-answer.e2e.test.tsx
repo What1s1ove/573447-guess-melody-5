@@ -11,6 +11,7 @@ describe(`GenreQuestionAnswer component`, () => {
         isChecked
         answer={mockedGenreQuestionAnswer}
         idx={1}
+        renderPlayer={jest.fn()}
         onAnswerChange={onAnswerChange}
       />
     );

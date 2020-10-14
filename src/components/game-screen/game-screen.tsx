@@ -2,12 +2,16 @@ import * as React from 'react';
 import { Redirect } from 'react-router-dom';
 import { AppRoute, QuestionType } from '~/common/enums/enums';
 import { GameQuestion } from '~/common/types/types';
+import withActivePlayer from '~/hocs/with-audio-player/with-audio-player';
 import GameHeader from '~/components/game-header/game-header';
 import GenreQuestionScreen from '~/components/genre-question-screen/genre-question-screen';
 import ArtistQuestionScreen from '~/components/artist-question-screen/artist-question-screen';
 
 const DEFAULT_STEP = 0;
 const INCREMENT_STEP_COUNT = 1;
+
+const GenreQuestionScreenWrapped = withActivePlayer(GenreQuestionScreen);
+const ArtistQuestionScreenWrapped = withActivePlayer(ArtistQuestionScreen);
 
 type Props = {
   questions: GameQuestion[];
@@ -27,7 +31,7 @@ const GameScreen: React.FC<Props> = ({ questions }) => {
     switch (question.type) {
       case QuestionType.GENRE: {
         return (
-          <GenreQuestionScreen
+          <GenreQuestionScreenWrapped
             question={question}
             onAnswer={onAnswer}
             key={question.id}
@@ -36,7 +40,7 @@ const GameScreen: React.FC<Props> = ({ questions }) => {
       }
       case QuestionType.ARTIST: {
         return (
-          <ArtistQuestionScreen
+          <ArtistQuestionScreenWrapped
             question={question}
             onAnswer={onAnswer}
             key={question.id}

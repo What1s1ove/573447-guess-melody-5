@@ -15,18 +15,6 @@ exports[`GenreQuestionScreen component should render GenreQuestionScreen compone
     <div
       class="track"
     >
-      <button
-        aria-label="Play music"
-        class="track__button track__button--play"
-        type="button"
-      />
-      <div
-        class="track__status"
-      >
-        <audio
-          src="https://upload.wikimedia.org/wikipedia/commons/4/4e/BWV_543-fugue.ogg"
-        />
-      </div>
       <div
         class="game__answer"
       >
@@ -48,18 +36,6 @@ exports[`GenreQuestionScreen component should render GenreQuestionScreen compone
     <div
       class="track"
     >
-      <button
-        aria-label="Play music"
-        class="track__button track__button--play"
-        type="button"
-      />
-      <div
-        class="track__status"
-      >
-        <audio
-          src="https://upload.wikimedia.org/wikipedia/commons/4/4e/BWV_543-fugue.ogg"
-        />
-      </div>
       <div
         class="game__answer"
       >
@@ -81,18 +57,6 @@ exports[`GenreQuestionScreen component should render GenreQuestionScreen compone
     <div
       class="track"
     >
-      <button
-        aria-label="Play music"
-        class="track__button track__button--play"
-        type="button"
-      />
-      <div
-        class="track__status"
-      >
-        <audio
-          src="https://upload.wikimedia.org/wikipedia/commons/4/4e/BWV_543-fugue.ogg"
-        />
-      </div>
       <div
         class="game__answer"
       >

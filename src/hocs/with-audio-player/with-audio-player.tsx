@@ -1,16 +1,26 @@
 import * as React from 'react';
+
 import { IDX_NOT_FOUND } from '~/common/constants/constants';
-import { RenderPlayerCb } from '~/common/types/types';
+import {
+  WithActivePlayer,
+  RenderPlayerCb,
+  Subtract,
+} from '~/common/types/types';
 import AudioPlayer from '~/components/audio-player/audio-player';
 
 const DEFAULT_PLAYER_ID = 1;
 
-const withActivePlayer = <T extends {}>(Component: React.FC<T>) => {
-  const WithActivePlayer: React.FC<T> = (props) => {
-    const [activePlayerId, setPlayerId] = React.useState<number>(DEFAULT_PLAYER_ID);
+const withActivePlayer = <P extends WithActivePlayer>(
+  Component: React.ComponentType<P>
+) => {
+  const WithActivePlayer: React.FC<Subtract<P, WithActivePlayer>> = (props) => {
+    const [activePlayerId, setPlayerId] = React.useState<number>(
+      DEFAULT_PLAYER_ID
+    );
 
     const onPlayBtnClick = (playerId: number) => {
-      const updatedPlayerId = activePlayerId === playerId ? IDX_NOT_FOUND : playerId;
+      const updatedPlayerId =
+        activePlayerId === playerId ? IDX_NOT_FOUND : playerId;
 
       setPlayerId(updatedPlayerId);
     };
@@ -31,11 +41,7 @@ const withActivePlayer = <T extends {}>(Component: React.FC<T>) => {
       );
     };
 
-    return (
-      <>
-        <Component {...props} renderPlayer={renderPlayer} />
-      </>
-    );
+    return <Component {...(props as P)} renderPlayer={renderPlayer} />;
   };
 
   return WithActivePlayer;
