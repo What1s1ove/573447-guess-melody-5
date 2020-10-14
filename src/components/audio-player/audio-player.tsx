@@ -20,7 +20,11 @@ const AudioPlayer: React.FC<Props> = ({ isPlaying, src, onPlayBtnClick }) => {
   React.useEffect(() => {
     const audioNode = audioPlayerRef.current as HTMLAudioElement;
 
-    isPlaying ? audioNode.play() : audioNode.pause();
+    if (isPlaying) {
+      audioNode.play();
+    } else {
+      audioNode.pause();
+    }
   }, [isPlaying]);
 
   React.useEffect(() => {

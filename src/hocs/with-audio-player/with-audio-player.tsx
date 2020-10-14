@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IDX_NOT_FOUND } from '~/common/constants/constants';
 import {
-  WithActivePlayer,
+  WithActivePlayer as WithActivePlayerProps,
   RenderPlayerCb,
   Subtract,
 } from '~/common/types/types';
@@ -10,10 +10,10 @@ import AudioPlayer from '~/components/audio-player/audio-player';
 
 const DEFAULT_PLAYER_ID = 0;
 
-const withActivePlayer = <P extends WithActivePlayer>(
+const withActivePlayer = <P extends WithActivePlayerProps>(
   Component: React.ComponentType<P>
 ) => {
-  const WithActivePlayer: React.FC<Subtract<P, WithActivePlayer>> = (props) => {
+  const WithActivePlayer: React.FC<Subtract<P, WithActivePlayerProps>> = (props) => {
     const [activePlayerId, setPlayerId] = React.useState<number>(DEFAULT_PLAYER_ID);
 
     const onPlayBtnClick = (playerId: number) => {
