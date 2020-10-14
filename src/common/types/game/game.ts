@@ -23,10 +23,13 @@ type ChangeGenreQuestionAnswerCb = (
   isChecked: boolean
 ) => void;
 
+type RenderPlayerCb = (src: string, playerId: number) => JSX.Element;
+
 export {
   GameQuestion,
   AnswerArtistQuestionCb,
   ChangeArtistQuestionAnswerCb,
   AnswerGenreQuestionCb,
   ChangeGenreQuestionAnswerCb,
+  RenderPlayerCb,
 };
