@@ -43,4 +43,4 @@ const gameReducer = (
   return state;
 };
 
-export { GameState, gameReducer };
+export { gameReducer };

@@ -19,12 +19,19 @@ const ArtistQuestionScreenWrapped = withActivePlayer(ArtistQuestionScreen);
 
 type Props = {
   step: number;
+  mistakesCount: number;
   questions: GameQuestion[];
   incrementStep: IncrementStepAc;
   resetGame: ResetGameAc;
 };
 
-const GameScreen: React.FC<Props> = ({ step, questions, incrementStep, resetGame }) => {
+const GameScreen: React.FC<Props> = ({
+  step,
+  questions,
+  mistakesCount,
+  incrementStep,
+  resetGame,
+}) => {
   const currentQuestion = questions[step];
 
   const onAnswer = () => {
@@ -64,7 +71,7 @@ const GameScreen: React.FC<Props> = ({ step, questions, incrementStep, resetGame
 
   return (
     <section className={`game game--${currentQuestion.type}`}>
-      <GameHeader />
+      <GameHeader mistakesCount={mistakesCount} />
       {getScreen(currentQuestion)}
     </section>
   );
@@ -73,6 +80,7 @@ const GameScreen: React.FC<Props> = ({ step, questions, incrementStep, resetGame
 export default connect(
   ({ game }: RootState) => ({
     step: game.step,
+    mistakesCount: game.mistakesCount,
   }),
   {
     incrementStep: GameActionCreator.incrementStep,
