@@ -3,12 +3,12 @@ import { GameAction } from '~/common/types/types';
 
 type GameState = {
   step: number;
-  mistakes: number;
+  mistakesCount: number;
 };
 
 const initialState: GameState = {
   step: 0,
-  mistakes: 0,
+  mistakesCount: 0,
 };
 
 const gameReducer = (
@@ -29,7 +29,7 @@ const gameReducer = (
 
       return {
         ...state,
-        mistakes: state.mistakes + incrementMistakeCount,
+        mistakesCount: state.mistakesCount + incrementMistakeCount,
       };
     }
     case GameActionType.RESET_GAME: {
