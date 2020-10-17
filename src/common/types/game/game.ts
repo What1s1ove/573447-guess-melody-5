@@ -3,9 +3,12 @@ import {
   IArtistQuestion,
   IGenreQuestion,
   IArtistQuestionAnswer,
+  IGenreQuestionAnswer,
 } from '~/common/interfaces/interfaces';
 
 type GameQuestion = IGenreQuestion | IArtistQuestion;
+
+type GameAnswer = IGenreQuestionAnswer | IArtistQuestionAnswer;
 
 type AnswerArtistQuestionCb = (
   question: IArtistQuestion,
@@ -28,6 +31,7 @@ type RenderPlayerCb = (src: string, playerId: number) => React.ReactElement;
 
 export {
   GameQuestion,
+  GameAnswer,
   AnswerArtistQuestionCb,
   ChangeArtistQuestionAnswerCb,
   AnswerGenreQuestionCb,
