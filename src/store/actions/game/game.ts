@@ -1,24 +1,20 @@
 import { GameActionType } from '~/common/enums/enums';
-import {
-  IncrementStepAction,
-  IncrementMistakeAction,
-  ResetGameAction,
-} from '~/common/types/types';
+import { GameAC } from '~/common/types/types';
 
-const GameActionCreator = {
-  incrementStep: (): IncrementStepAction => ({
+const GameActionCreator: GameAC = {
+  incrementStep: () => ({
     type: GameActionType.INCREMENT_STEP,
     payload: {
       incrementStepCount: 1,
     },
   }),
-  incrementMistake: (): IncrementMistakeAction => ({
+  incrementMistake: () => ({
     type: GameActionType.INCREMENT_MISTAKES,
     payload: {
       incrementMistakeCount: 1,
     },
   }),
-  resetGame: (): ResetGameAction => ({
+  resetGame: () => ({
     type: GameActionType.RESET_GAME,
   }),
 };
