@@ -8,7 +8,7 @@ import {
 
 type GameQuestion = IGenreQuestion | IArtistQuestion;
 
-type GameAnswer = IGenreQuestionAnswer | IArtistQuestionAnswer;
+type GameAnswer = IGenreQuestionAnswer[] | IArtistQuestionAnswer;
 
 type AnswerArtistQuestionCb = (
   question: IArtistQuestion,

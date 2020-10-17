@@ -3,10 +3,14 @@ import {
   IncrementMistakeAction,
   ResetGameAction,
 } from '~/common/types/redux/actions/game';
+import { GameAnswer, GameQuestion } from '../../game/game';
 
 type IncrementStepAc = () => IncrementStepAction;
 
-type IncrementMistakeAc = () => IncrementMistakeAction;
+type IncrementMistakeAc = (
+  question: GameQuestion,
+  answer: GameAnswer
+) => IncrementMistakeAction;
 
 type ResetGameAc = () => ResetGameAction;
 
