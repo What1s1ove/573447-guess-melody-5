@@ -1,30 +1,34 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import { GameActionCreator } from '~/store/actions/actions';
+import { RootState } from '~/store/reducer.root';
 import { AppRoute, QuestionType } from '~/common/enums/enums';
-import { GameQuestion } from '~/common/types/types';
+import {
+  GameQuestion,
+  IncrementStepAc,
+  ResetGameAc,
+} from '~/common/types/types';
 import withActivePlayer from '~/hocs/with-audio-player/with-audio-player';
 import GameHeader from '~/components/game-header/game-header';
 import GenreQuestionScreen from '~/components/genre-question-screen/genre-question-screen';
 import ArtistQuestionScreen from '~/components/artist-question-screen/artist-question-screen';
 
-const DEFAULT_STEP = 0;
-const INCREMENT_STEP_COUNT = 1;
-
 const GenreQuestionScreenWrapped = withActivePlayer(GenreQuestionScreen);
 const ArtistQuestionScreenWrapped = withActivePlayer(ArtistQuestionScreen);
 
 type Props = {
+  step: number;
   questions: GameQuestion[];
+  incrementStep: IncrementStepAc;
+  resetGame: ResetGameAc;
 };
 
-const GameScreen: React.FC<Props> = ({ questions }) => {
-  const [step, setStep] = React.useState<number>(DEFAULT_STEP);
+const GameScreen: React.FC<Props> = ({ step, questions, incrementStep }) => {
   const currentQuestion = questions[step];
 
   const onAnswer = () => {
-    const newStep = step + INCREMENT_STEP_COUNT;
-
-    setStep(newStep);
+    incrementStep();
   };
 
   const getScreen = (question: GameQuestion) => {
@@ -64,4 +68,12 @@ const GameScreen: React.FC<Props> = ({ questions }) => {
   );
 };
 
-export default GameScreen;
+export default connect(
+  ({ game }: RootState) => ({
+    step: game.step,
+  }),
+  {
+    incrementStep: GameActionCreator.incrementStep,
+    resetGame: GameActionCreator.resetGame,
+  }
+)(GameScreen);
