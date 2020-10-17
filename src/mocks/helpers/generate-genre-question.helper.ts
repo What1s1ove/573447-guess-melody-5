@@ -33,9 +33,9 @@ const generateGenreQuestion = (): IGenreQuestion => {
 
   return {
     genre,
+    answers: [answer, ...answers],
     id: generateRandomId(),
     type: QuestionType.GENRE,
-    answers: [answer, ...answers],
   };
 };
 

@@ -1,3 +1,4 @@
+import * as React from 'react';
 import {
   IArtistQuestion,
   IGenreQuestion,
@@ -23,10 +24,13 @@ type ChangeGenreQuestionAnswerCb = (
   isChecked: boolean
 ) => void;
 
+type RenderPlayerCb = (src: string, playerId: number) => React.ReactElement;
+
 export {
   GameQuestion,
   AnswerArtistQuestionCb,
   ChangeArtistQuestionAnswerCb,
   AnswerGenreQuestionCb,
   ChangeGenreQuestionAnswerCb,
+  RenderPlayerCb,
 };

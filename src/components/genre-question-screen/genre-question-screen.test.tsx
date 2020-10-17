@@ -7,8 +7,9 @@ describe(`GenreQuestionScreen component`, () => {
   it(`should render GenreQuestionScreen component`, () => {
     const component = render(
       <GenreQuestionScreen
-        question={mockedGenreQuestion}
         onAnswer={jest.fn()}
+        question={mockedGenreQuestion}
+        renderPlayer={jest.fn()}
       />
     );
 

@@ -4,15 +4,22 @@ import { IArtistQuestion } from '~/common/interfaces/interfaces';
 import {
   AnswerArtistQuestionCb,
   ChangeArtistQuestionAnswerCb,
+  WithActivePlayer,
 } from '~/common/types/types';
 import ArtistQuestionAnswer from '~/components/artist-question-answer/artist-question-answer';
 
+const PLAYER_IDX = 0;
+
 type Props = {
-  question: IArtistQuestion;
   onAnswer: AnswerArtistQuestionCb;
+  question: IArtistQuestion;
 };
 
-const ArtistQuestionScreen: React.FC<Props> = ({ question, onAnswer }) => {
+const ArtistQuestionScreen: React.FC<Props & WithActivePlayer> = ({
+  onAnswer,
+  question,
+  renderPlayer,
+}) => {
   const onAnswerChange: ChangeArtistQuestionAnswerCb = (answer) => {
     onAnswer(question, answer);
   };
@@ -22,14 +29,7 @@ const ArtistQuestionScreen: React.FC<Props> = ({ question, onAnswer }) => {
       <h2 className="game__title">Кто исполняет эту песню?</h2>
       <div className="game__track">
         <div className="track">
-          <button
-            className="track__button track__button--play"
-            type="button"
-            aria-label="Play track"
-          />
-          <div className="track__status">
-            <audio src={question.song.src} />
-          </div>
+          {renderPlayer(question.song.src, PLAYER_IDX)}
         </div>
       </div>
       <form className="game__artist">

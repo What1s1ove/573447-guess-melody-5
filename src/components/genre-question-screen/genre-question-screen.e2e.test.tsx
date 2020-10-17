@@ -7,7 +7,11 @@ describe(`GenreQuestionScreen component`, () => {
   it(`should call callback if answer is selected`, () => {
     const onSubmit = jest.fn();
     const component = shallow(
-      <GenreQuestionScreen question={mockedGenreQuestion} onAnswer={onSubmit} />
+      <GenreQuestionScreen
+        onAnswer={onSubmit}
+        question={mockedGenreQuestion}
+        renderPlayer={jest.fn()}
+      />
     );
 
     component.find(`.game__tracks`).simulate(`submit`, {

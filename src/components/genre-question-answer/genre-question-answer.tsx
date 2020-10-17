@@ -4,6 +4,7 @@ import { IGenreQuestionAnswer } from '~/common/interfaces/interfaces';
 import {
   ChangeGenreQuestionAnswerCb,
   InputChangeEvent,
+  RenderPlayerCb,
 } from '~/common/types/types';
 
 type Props = {
@@ -11,12 +12,14 @@ type Props = {
   idx: number;
   isChecked: boolean;
   onAnswerChange: ChangeGenreQuestionAnswerCb;
+  renderPlayer: RenderPlayerCb;
 };
 
 const GenreQuestionAnswer: React.FC<Props> = ({
   idx,
   isChecked,
   answer,
+  renderPlayer,
   onAnswerChange,
 }) => {
   const answerLabel = `answer-${idx}`;
@@ -29,14 +32,7 @@ const GenreQuestionAnswer: React.FC<Props> = ({
 
   return (
     <div className="track">
-      <button
-        className="track__button track__button--play"
-        aria-label="Play music"
-        type="button"
-      />
-      <div className="track__status">
-        <audio src={answer.src} />
-      </div>
+      {renderPlayer(answer.src, idx)}
       <div className="game__answer">
         <input
           className="game__input visually-hidden"

@@ -3,23 +3,23 @@ import { QuestionType } from '~/common/enums/enums';
 import { mockedArtistQuestionAnswer } from '~/mocks/game/artist-question-answer.mock';
 
 const mockedArtistQuestion: IArtistQuestion = {
+  answers: [
+    {
+      artist: `John Snow`,
+      picture: `https://via.placeholder.com/135`,
+    },
+    {
+      artist: `Jim Beam`,
+      picture: `https://via.placeholder.com/135`,
+    },
+    mockedArtistQuestionAnswer,
+  ],
   id: `1`,
-  type: QuestionType.ARTIST,
   song: {
     artist: `Jim Beam`,
     src: `https://upload.wikimedia.org/wikipedia/commons/4/4e/BWV_543-fugue.ogg`,
   },
-  answers: [
-    {
-      picture: `https://api.adorable.io/avatars/128/0.1`,
-      artist: `John Snow`,
-    },
-    {
-      picture: `https://api.adorable.io/avatars/128/0.1`,
-      artist: `Jim Beam`,
-    },
-    mockedArtistQuestionAnswer,
-  ],
+  type: QuestionType.ARTIST,
 };
 
 export { mockedArtistQuestion };

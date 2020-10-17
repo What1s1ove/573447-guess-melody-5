@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AudioPlayer component should render AudioPlayer component 1`] = `
+Array [
+  <button
+    aria-label="Play track"
+    class="track__button track__button--play"
+    disabled=""
+    type="button"
+  />,
+  <div
+    class="track__status"
+  >
+    <audio />
+  </div>,
+]
+`;
