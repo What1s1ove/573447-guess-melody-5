@@ -77,6 +77,8 @@ const GameScreen: React.FC<Props> = ({
   );
 };
 
+export { GameScreen };
+
 export default connect(
   ({ game }: RootState) => ({
     step: game.step,

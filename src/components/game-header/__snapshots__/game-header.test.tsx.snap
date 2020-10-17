@@ -38,12 +38,6 @@ exports[`GameHeader component should render GameHeader component 1`] = `
     <div
       class="wrong"
     />
-    <div
-      class="wrong"
-    />
-    <div
-      class="wrong"
-    />
   </div>
 </header>
 `;
