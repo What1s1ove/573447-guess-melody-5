@@ -31,6 +31,12 @@ const gameReducer = (
         mistakes: state.mistakes + incrementMistakeCount,
       };
     }
+    case GameActionType.RESET_GAME: {
+      return {
+        ...state,
+        ...initialState,
+      };
+    }
   }
 
   return state;
