@@ -1,4 +1,4 @@
-import { GameAction, GameActionType } from '../action/action-type';
+import { GameAction, GameActionType } from '~/store/actions/game/action-type';
 
 type GameState = {
   step: number;
