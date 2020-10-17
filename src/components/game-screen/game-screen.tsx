@@ -24,7 +24,7 @@ type Props = {
   resetGame: ResetGameAc;
 };
 
-const GameScreen: React.FC<Props> = ({ step, questions, incrementStep }) => {
+const GameScreen: React.FC<Props> = ({ step, questions, incrementStep, resetGame }) => {
   const currentQuestion = questions[step];
 
   const onAnswer = () => {
@@ -57,6 +57,8 @@ const GameScreen: React.FC<Props> = ({ step, questions, incrementStep }) => {
   };
 
   if (step >= questions.length || !currentQuestion) {
+    resetGame();
+
     return <Redirect to={AppRoute.ROOT} />;
   }
 
