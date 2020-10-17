@@ -1,0 +1,7 @@
+enum GameActionType {
+  INCREMENT_STEP = `INCREMENT_STEP`,
+  RESET_GAME = `RESET_GAME`,
+  INCREMENT_MISTAKES = `INCREMENT_MISTAKES`,
+}
+
+export { GameActionType };

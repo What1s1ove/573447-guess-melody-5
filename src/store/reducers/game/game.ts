@@ -1,4 +1,5 @@
-import { GameAction, GameActionType } from '~/store/actions/game/action-type';
+import { GameActionType } from '~/common/enums/enums';
+import { GameAction } from '~/common/types/types';
 
 type GameState = {
   step: number;

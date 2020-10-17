@@ -1,8 +1,4 @@
-enum GameActionType {
-  INCREMENT_STEP = `INCREMENT_STEP`,
-  RESET_GAME = `RESET_GAME`,
-  INCREMENT_MISTAKES = `INCREMENT_MISTAKES`,
-}
+import { GameActionType } from '~/common/enums/enums';
 
 type IncrementStepAction = {
   type: GameActionType.INCREMENT_STEP;
@@ -28,7 +24,6 @@ type GameAction =
   | IncrementMistakeAction;
 
 export {
-  GameActionType,
   IncrementStepAction,
   ResetGameAction,
   IncrementMistakeAction,

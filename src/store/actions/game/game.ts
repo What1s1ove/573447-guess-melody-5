@@ -1,9 +1,9 @@
+import { GameActionType } from '~/common/enums/enums';
 import {
-  GameActionType,
   IncrementStepAction,
   IncrementMistakeAction,
   ResetGameAction,
-} from './action-type';
+} from '~/common/types/types';
 
 const GameActionCreator = {
   incrementStep: (): IncrementStepAction => ({
