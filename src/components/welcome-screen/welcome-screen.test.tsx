@@ -7,7 +7,7 @@ describe(`WelcomeScreen component`, () => {
   it(`should render WelcomeScreen component`, () => {
     const component = render(
       <MemoryRouter>
-        <WelcomeScreen errorsCount={3} />
+        <WelcomeScreen />
       </MemoryRouter>
     );
 

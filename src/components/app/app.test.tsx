@@ -5,9 +5,7 @@ import App from './app';
 
 describe(`App component`, () => {
   it(`should render App component`, () => {
-    const component = render(
-      <App errorsCount={3} questions={mockedQuestions} />
-    );
+    const component = render(<App questions={mockedQuestions} />);
 
     expect(component).toMatchSnapshot();
   });

@@ -1,12 +1,8 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { AppRoute } from '~/common/enums/enums';
+import { AppRoute, GameConfig } from '~/common/enums/enums';
 
-type Props = {
-  errorsCount: number;
-};
-
-const WelcomeScreen: React.FC<Props> = ({ errorsCount }) => (
+const WelcomeScreen = () => (
   <section className="welcome">
     <div className="welcome__logo">
       <img
@@ -23,7 +19,7 @@ const WelcomeScreen: React.FC<Props> = ({ errorsCount }) => (
     <p className="welcome__text">Правила просты:</p>
     <ul className="welcome__rules-list">
       <li>Нужно ответить на все вопросы.</li>
-      <li>Можно допустить {errorsCount} ошибки.</li>
+      <li>Можно допустить {GameConfig.MAX_MISTAKES_COUNT} ошибки.</li>
     </ul>
     <p className="welcome__text">Удачи!</p>
   </section>

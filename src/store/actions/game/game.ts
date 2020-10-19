@@ -2,9 +2,11 @@ import {
   checkIsArtistAnswerCorrect,
   checkIsGenreAnswerCorrect,
 } from '~/helpers/game';
-import { GameActionType, QuestionType } from '~/common/enums/enums';
+import { GameActionType, GameConfig, QuestionType } from '~/common/enums/enums';
 import { GameAC, GenreQuestionUserAnswers } from '~/common/types/types';
 import { IArtistQuestionAnswer } from '~/common/interfaces/game/game';
+
+const INCORRECT_ANSWER_INCREMENT_COUNT = 0;
 
 const GameActionCreator: GameAC = {
   incrementStep: () => ({
@@ -36,7 +38,9 @@ const GameActionCreator: GameAC = {
     return {
       type: GameActionType.INCREMENT_MISTAKES,
       payload: {
-        incrementMistakeCount: isCorrectAnswer ? 0 : 1,
+        incrementMistakeCount: isCorrectAnswer
+          ? INCORRECT_ANSWER_INCREMENT_COUNT
+          : GameConfig.MAX_MISTAKES_COUNT,
       },
     };
   },
