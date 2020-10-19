@@ -1,5 +1,8 @@
 import { GameActionType, GameConfig } from '~/common/enums/enums';
-import { checkIsGenreAnswerCorrect } from '~/helpers/game';
+import {
+  checkIsArtistAnswerCorrect,
+  checkIsGenreAnswerCorrect,
+} from '~/helpers/game';
 import {
   mockedArtistQuestion,
   mockedArtistQuestionAnswer,
@@ -40,10 +43,16 @@ describe(`Game action creator works correctly`, () => {
   });
 
   it(`incrementMistake ac returns correct action for the genre answer`, () => {
-    const isCorrect = mockedArtistQuestion.song.artist === mockedArtistQuestionAnswer.artist;
+    const isCorrect = checkIsArtistAnswerCorrect(
+      mockedArtistQuestion,
+      mockedArtistQuestionAnswer
+    );
 
     expect(
-      GameActionCreator.incrementMistake(mockedArtistQuestion, mockedArtistQuestionAnswer)
+      GameActionCreator.incrementMistake(
+        mockedArtistQuestion,
+        mockedArtistQuestionAnswer
+      )
     ).toEqual({
       type: GameActionType.INCREMENT_MISTAKES,
       payload: {
