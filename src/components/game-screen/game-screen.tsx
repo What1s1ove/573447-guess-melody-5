@@ -6,8 +6,9 @@ import { RootState } from '~/store/reducer.root';
 import { AppRoute, QuestionType } from '~/common/enums/enums';
 import {
   GameQuestion,
-  IncrementStepAc,
-  ResetGameAc,
+  UserAnswerCb,
+  GameAnswer,
+  BindingCb,
 } from '~/common/types/types';
 import withActivePlayer from '~/hocs/with-audio-player/with-audio-player';
 import GameHeader from '~/components/game-header/game-header';
@@ -21,22 +22,18 @@ type Props = {
   step: number;
   mistakesCount: number;
   questions: GameQuestion[];
-  incrementStep: IncrementStepAc;
-  resetGame: ResetGameAc;
+  onAnswer: UserAnswerCb;
+  resetGame: BindingCb;
 };
 
 const GameScreen: React.FC<Props> = ({
   step,
   questions,
   mistakesCount,
-  incrementStep,
+  onAnswer,
   resetGame,
 }) => {
   const currentQuestion = questions[step];
-
-  const onAnswer = () => {
-    incrementStep();
-  };
 
   const getScreen = (question: GameQuestion) => {
     switch (question.type) {
@@ -84,8 +81,13 @@ export default connect(
     step: game.step,
     mistakesCount: game.mistakesCount,
   }),
-  {
-    incrementStep: GameActionCreator.incrementStep,
-    resetGame: GameActionCreator.resetGame,
-  }
+  (dispatch) => ({
+    onAnswer: (question: GameQuestion, answer: GameAnswer) => {
+      dispatch(GameActionCreator.incrementStep());
+      dispatch(GameActionCreator.incrementMistake(question, answer));
+    },
+    resetGame: () => {
+      dispatch(GameActionCreator.resetGame());
+    },
+  })
 )(GameScreen);

@@ -3,11 +3,8 @@ import {
   checkIsGenreAnswerCorrect,
 } from '~/helpers/game';
 import { GameActionType, QuestionType } from '~/common/enums/enums';
-import { GameAC } from '~/common/types/types';
-import {
-  IArtistQuestionAnswer,
-  IGenreQuestionAnswer,
-} from '~/common/interfaces/game/game';
+import { GameAC, GenreQuestionUserAnswers } from '~/common/types/types';
+import { IArtistQuestionAnswer } from '~/common/interfaces/game/game';
 
 const GameActionCreator: GameAC = {
   incrementStep: () => ({
@@ -23,7 +20,7 @@ const GameActionCreator: GameAC = {
       case QuestionType.GENRE: {
         isCorrectAnswer = checkIsGenreAnswerCorrect(
           question,
-          answer as IGenreQuestionAnswer[]
+          answer as GenreQuestionUserAnswers
         );
         break;
       }

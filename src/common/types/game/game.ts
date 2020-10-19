@@ -3,12 +3,13 @@ import {
   IArtistQuestion,
   IGenreQuestion,
   IArtistQuestionAnswer,
-  IGenreQuestionAnswer,
 } from '~/common/interfaces/interfaces';
+
+type GenreQuestionUserAnswers = boolean[];
 
 type GameQuestion = IGenreQuestion | IArtistQuestion;
 
-type GameAnswer = IGenreQuestionAnswer[] | IArtistQuestionAnswer;
+type GameAnswer = GenreQuestionUserAnswers | IArtistQuestionAnswer;
 
 type AnswerArtistQuestionCb = (
   question: IArtistQuestion,
@@ -19,7 +20,7 @@ type ChangeArtistQuestionAnswerCb = (answer: IArtistQuestionAnswer) => void;
 
 type AnswerGenreQuestionCb = (
   question: IGenreQuestion,
-  answers: boolean[]
+  answers: GenreQuestionUserAnswers
 ) => void;
 
 type ChangeGenreQuestionAnswerCb = (
@@ -27,14 +28,18 @@ type ChangeGenreQuestionAnswerCb = (
   isChecked: boolean
 ) => void;
 
+type UserAnswerCb = (question: GameQuestion, answer: GameAnswer) => void;
+
 type RenderPlayerCb = (src: string, playerId: number) => React.ReactElement;
 
 export {
   GameQuestion,
   GameAnswer,
+  GenreQuestionUserAnswers,
   AnswerArtistQuestionCb,
   ChangeArtistQuestionAnswerCb,
   AnswerGenreQuestionCb,
   ChangeGenreQuestionAnswerCb,
+  UserAnswerCb,
   RenderPlayerCb,
 };

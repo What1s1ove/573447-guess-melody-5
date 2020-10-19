@@ -2,8 +2,8 @@ import {
   IArtistQuestion,
   IArtistQuestionAnswer,
   IGenreQuestion,
-  IGenreQuestionAnswer,
 } from '~/common/interfaces/game/game';
+import { GenreQuestionUserAnswers } from '~/common/types/types';
 
 const checkIsArtistAnswerCorrect = (
   question: IArtistQuestion,
@@ -16,7 +16,7 @@ const checkIsArtistAnswerCorrect = (
 
 const checkIsGenreAnswerCorrect = (
   question: IGenreQuestion,
-  answers: IGenreQuestionAnswer[]
+  answers: GenreQuestionUserAnswers
 ) => {
   const hasCorrectAnswer = answers.every((_, idx) => {
     const isCorrect = question.answers[idx].genre === question.genre;

@@ -1,5 +1,7 @@
+import { GenreQuestionUserAnswers } from '~/common/types/types';
+
 const getUpdatedAnswers = (
-  answers: boolean[],
+  answers: GenreQuestionUserAnswers,
   answerIdx: number,
   isChecked: boolean
 ) => {

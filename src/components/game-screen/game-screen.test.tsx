@@ -12,7 +12,7 @@ describe(`GameScreen component`, () => {
           questions={mockedQuestions}
           step={1}
           mistakesCount={1}
-          incrementStep={jest.fn()}
+          onAnswer={jest.fn()}
           resetGame={jest.fn()}
         />
       </MemoryRouter>
