@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { GameActionCreator } from '~/store/actions/actions';
 import { RootState } from '~/store/reducer.root';
-import { AppRoute, QuestionType } from '~/common/enums/enums';
+import { AppRoute, GameConfig, QuestionType } from '~/common/enums/enums';
 import {
   GameQuestion,
   UserAnswerCb,
@@ -60,7 +60,7 @@ const GameScreen: React.FC<Props> = ({
     return null;
   };
 
-  if (step >= questions.length || !currentQuestion) {
+  if (step >= GameConfig.MAX_MISTAKES_COUNT || !currentQuestion) {
     resetGame();
 
     return <Redirect to={AppRoute.ROOT} />;

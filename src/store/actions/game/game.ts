@@ -12,7 +12,7 @@ const GameActionCreator: GameAC = {
   incrementStep: () => ({
     type: GameActionType.INCREMENT_STEP,
     payload: {
-      incrementStepCount: 1,
+      incrementStepCount: GameConfig.INCREMENT_STEP_COUNT,
     },
   }),
   incrementMistake: (question, answer) => {
@@ -40,7 +40,7 @@ const GameActionCreator: GameAC = {
       payload: {
         incrementMistakeCount: isCorrectAnswer
           ? INCORRECT_ANSWER_INCREMENT_COUNT
-          : GameConfig.MAX_MISTAKES_COUNT,
+          : GameConfig.INCREMENT_MISTAKE_COUNT,
       },
     };
   },

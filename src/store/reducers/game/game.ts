@@ -1,4 +1,4 @@
-import { GameActionType } from '~/common/enums/enums';
+import { GameActionType, GameConfig } from '~/common/enums/enums';
 import { GameAction } from '~/common/types/types';
 
 type GameState = {
@@ -27,16 +27,17 @@ const gameReducer = (
     case GameActionType.INCREMENT_MISTAKES: {
       const { incrementMistakeCount } = action.payload;
 
+      if (state.mistakesCount >= GameConfig.MAX_MISTAKES_COUNT) {
+        return initialState;
+      }
+
       return {
         ...state,
         mistakesCount: state.mistakesCount + incrementMistakeCount,
       };
     }
     case GameActionType.RESET_GAME: {
-      return {
-        ...state,
-        ...initialState,
-      };
+      return initialState;
     }
   }
 
