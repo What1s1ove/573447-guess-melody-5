@@ -26,14 +26,15 @@ const gameReducer = (
     }
     case GameActionType.INCREMENT_MISTAKES: {
       const { incrementMistakeCount } = action.payload;
+      const updatedMistakesCount = state.mistakesCount + incrementMistakeCount;
 
-      if (state.mistakesCount >= GameConfig.MAX_MISTAKES_COUNT) {
+      if (updatedMistakesCount >= GameConfig.MAX_MISTAKES_COUNT) {
         return initialState;
       }
 
       return {
         ...state,
-        mistakesCount: state.mistakesCount + incrementMistakeCount,
+        mistakesCount: updatedMistakesCount,
       };
     }
     case GameActionType.RESET_GAME: {
