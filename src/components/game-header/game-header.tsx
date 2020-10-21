@@ -1,10 +1,13 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { AppRoute } from '~/common/enums/enums';
+import MistakesList from '~/components/mistakes-list/mistakes-list';
 
-const MAX_ERROR_COUNT = 3;
+type Props = {
+  mistakesCount: number;
+};
 
-const GameHeader = () => (
+const GameHeader: React.FC<Props> = ({ mistakesCount }) => (
   <header className="game__header">
     <Link className="game__back" to={AppRoute.ROOT}>
       <span className="visually-hidden">Сыграть ещё раз</span>
@@ -31,11 +34,7 @@ const GameHeader = () => (
         }}
       />
     </svg>
-    <div className="game__mistakes">
-      {Array.from(new Array(MAX_ERROR_COUNT), (_, idx) => (
-        <div className="wrong" key={idx} />
-      ))}
-    </div>
+    <MistakesList mistakesCount={mistakesCount} />
   </header>
 );
 

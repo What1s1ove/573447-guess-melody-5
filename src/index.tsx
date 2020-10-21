@@ -1,16 +1,16 @@
 import * as React from 'react';
+import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
-import App from './components/app/app';
+import store from '~/store/store';
 import { generateQuestions } from '~/mocks/helpers/helpers';
+import App from './components/app/app';
+import { GameConfig } from './common/enums/enums';
 
-const AppConfig = {
-  ERRORS_COUNT: 3,
-  QUESTION_COUNT: 5,
-};
-
-const questions = generateQuestions(AppConfig.QUESTION_COUNT);
+const questions = generateQuestions(GameConfig.QUESTION_COUNT);
 
 ReactDOM.render(
-  <App questions={questions} errorsCount={AppConfig.ERRORS_COUNT} />,
+  <Provider store={store}>
+    <App questions={questions} />
+  </Provider>,
   document.querySelector(`#root`)
 );

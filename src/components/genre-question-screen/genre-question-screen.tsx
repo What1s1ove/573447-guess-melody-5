@@ -3,6 +3,7 @@ import { IGenreQuestion } from '~/common/interfaces/interfaces';
 import {
   AnswerGenreQuestionCb,
   ChangeGenreQuestionAnswerCb,
+  GenreQuestionUserAnswers,
   FormEvent,
   WithActivePlayer,
 } from '~/common/types/types';
@@ -21,7 +22,9 @@ const GenreQuestionScreen: React.FC<Props & WithActivePlayer> = ({
   question,
   renderPlayer,
 }) => {
-  const [answers, setAnswers] = React.useState<boolean[]>(DEFAULT_ANSWERS);
+  const [answers, setAnswers] = React.useState<GenreQuestionUserAnswers>(
+    DEFAULT_ANSWERS
+  );
 
   const onAnswerChange: ChangeGenreQuestionAnswerCb = (
     answerIdx,

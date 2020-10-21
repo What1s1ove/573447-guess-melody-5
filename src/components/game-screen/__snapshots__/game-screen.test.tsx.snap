@@ -2,7 +2,7 @@
 
 exports[`GameScreen component should render GameScreen component 1`] = `
 <section
-  class="game game--artist"
+  class="game game--genre"
 >
   <header
     class="game__header"
@@ -41,12 +41,6 @@ exports[`GameScreen component should render GameScreen component 1`] = `
       <div
         class="wrong"
       />
-      <div
-        class="wrong"
-      />
-      <div
-        class="wrong"
-      />
     </div>
   </header>
   <section
@@ -55,10 +49,10 @@ exports[`GameScreen component should render GameScreen component 1`] = `
     <h2
       class="game__title"
     >
-      Кто исполняет эту песню?
+      Выберите jazz треки
     </h2>
-    <div
-      class="game__track"
+    <form
+      class="game__tracks"
     >
       <div
         class="track"
@@ -76,71 +70,94 @@ exports[`GameScreen component should render GameScreen component 1`] = `
             autoplay=""
           />
         </div>
-      </div>
-    </div>
-    <form
-      class="game__artist"
-    >
-      <div
-        class="artist"
-      >
-        <label
-          class="artist__name"
-          for="answer-0"
+        <div
+          class="game__answer"
         >
           <input
-            class="artist__input visually-hidden"
+            class="game__input visually-hidden"
             id="answer-0"
-            type="radio"
+            name="answer"
+            type="checkbox"
+            value="0"
           />
-          <img
-            alt="John Snow"
-            class="artist__picture"
-            src="https://via.placeholder.com/135"
-          />
-          John Snow
-        </label>
+          <label
+            class="game__check"
+            for="answer-0"
+          >
+            Отметить
+          </label>
+        </div>
       </div>
       <div
-        class="artist"
+        class="track"
       >
-        <label
-          class="artist__name"
-          for="answer-1"
+        <button
+          aria-label="Play track"
+          class="track__button track__button--play"
+          disabled=""
+          type="button"
+        />
+        <div
+          class="track__status"
+        >
+          <audio />
+        </div>
+        <div
+          class="game__answer"
         >
           <input
-            class="artist__input visually-hidden"
+            class="game__input visually-hidden"
             id="answer-1"
-            type="radio"
+            name="answer"
+            type="checkbox"
+            value="1"
           />
-          <img
-            alt="Jim Beam"
-            class="artist__picture"
-            src="https://via.placeholder.com/135"
-          />
-          Jim Beam
-        </label>
+          <label
+            class="game__check"
+            for="answer-1"
+          >
+            Отметить
+          </label>
+        </div>
       </div>
       <div
-        class="artist"
+        class="track"
       >
-        <label
-          class="artist__name"
-          for="answer-2"
+        <button
+          aria-label="Play track"
+          class="track__button track__button--play"
+          disabled=""
+          type="button"
+        />
+        <div
+          class="track__status"
+        >
+          <audio />
+        </div>
+        <div
+          class="game__answer"
         >
           <input
-            class="artist__input visually-hidden"
+            class="game__input visually-hidden"
             id="answer-2"
-            type="radio"
+            name="answer"
+            type="checkbox"
+            value="2"
           />
-          <img
-            alt="Jack Daniels"
-            class="artist__picture"
-            src="https://via.placeholder.com/135"
-          />
-          Jack Daniels
-        </label>
+          <label
+            class="game__check"
+            for="answer-2"
+          >
+            Отметить
+          </label>
+        </div>
       </div>
+      <button
+        class="game__submit button"
+        type="submit"
+      >
+        Ответить
+      </button>
     </form>
   </section>
 </section>

@@ -7,7 +7,7 @@ describe(`GameHeader component`, () => {
   it(`should render GameHeader component`, () => {
     const component = render(
       <MemoryRouter>
-        <GameHeader />
+        <GameHeader mistakesCount={1} />
       </MemoryRouter>
     );
 

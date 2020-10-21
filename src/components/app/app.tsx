@@ -9,15 +9,14 @@ import GameOverScreen from '~/components/game-over-screen/game-over-screen';
 import WinScreen from '~/components/win-screen/win-screen';
 
 type Props = {
-  errorsCount: number;
   questions: GameQuestion[];
 };
 
-const App: React.FC<Props> = ({ questions, errorsCount }) => (
+const App: React.FC<Props> = ({ questions }) => (
   <BrowserRouter>
     <Switch>
       <Route exact path={AppRoute.ROOT}>
-        <WelcomeScreen errorsCount={errorsCount} />
+        <WelcomeScreen />
       </Route>
       <Route exact path={AppRoute.LOGIN}>
         <AuthScreen />
