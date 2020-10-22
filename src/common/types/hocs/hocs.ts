@@ -4,4 +4,8 @@ type WithActivePlayer = {
   renderPlayer: RenderPlayerCb;
 };
 
-export { WithActivePlayer };
+type WithAudio = {
+  isLoading: boolean;
+};
+
+export { WithActivePlayer, WithAudio };
