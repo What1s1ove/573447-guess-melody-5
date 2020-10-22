@@ -1,3 +1,4 @@
+import { IGenreQuestionAnswer } from '~/common/interfaces/interfaces';
 import { GenreQuestionUserAnswers } from '~/common/types/types';
 
 const getUpdatedAnswers = (
@@ -12,4 +13,10 @@ const getUpdatedAnswers = (
   return updatedAnswers;
 };
 
-export { getUpdatedAnswers };
+const generateDefaultUserAnswers = (answers: IGenreQuestionAnswer[]) => {
+  const defaultUserAnswers = new Array(answers.length).fill(false) as boolean[];
+
+  return defaultUserAnswers;
+};
+
+export { generateDefaultUserAnswers, getUpdatedAnswers };

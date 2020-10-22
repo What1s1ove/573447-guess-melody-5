@@ -8,9 +8,7 @@ import {
   WithActivePlayer,
 } from '~/common/types/types';
 import GenreQuestionAnswer from '~/components/genre-question-answer/genre-question-answer';
-import { getUpdatedAnswers } from './helpers';
-
-const DEFAULT_ANSWERS = [false, false, false, false];
+import { getUpdatedAnswers, generateDefaultUserAnswers } from './helpers';
 
 type Props = {
   onAnswer: AnswerGenreQuestionCb;
@@ -23,7 +21,7 @@ const GenreQuestionScreen: React.FC<Props & WithActivePlayer> = ({
   renderPlayer,
 }) => {
   const [answers, setAnswers] = React.useState<GenreQuestionUserAnswers>(
-    DEFAULT_ANSWERS
+    generateDefaultUserAnswers(question.answers)
   );
 
   const onAnswerChange: ChangeGenreQuestionAnswerCb = (
