@@ -8,7 +8,6 @@ import {
   GameQuestion,
   UserAnswerCb,
   GameAnswer,
-  BindingCb,
 } from '~/common/types/types';
 import withActivePlayer from '~/hocs/with-audio-player/with-audio-player';
 import withUserAnswer from '~/hocs/with-user-answer/with-user-answer';
@@ -16,7 +15,9 @@ import GameHeader from '~/components/game-header/game-header';
 import GenreQuestionScreen from '~/components/genre-question-screen/genre-question-screen';
 import ArtistQuestionScreen from '~/components/artist-question-screen/artist-question-screen';
 
-const GenreQuestionScreenWrapped = withUserAnswer(withActivePlayer(GenreQuestionScreen));
+const GenreQuestionScreenWrapped = withUserAnswer(
+  withActivePlayer(GenreQuestionScreen)
+);
 const ArtistQuestionScreenWrapped = withActivePlayer(ArtistQuestionScreen);
 
 type Props = {
@@ -24,7 +25,6 @@ type Props = {
   mistakesCount: number;
   questions: GameQuestion[];
   onAnswer: UserAnswerCb;
-  resetGame: BindingCb;
 };
 
 const GameScreen: React.FC<Props> = ({
@@ -32,7 +32,6 @@ const GameScreen: React.FC<Props> = ({
   questions,
   mistakesCount,
   onAnswer,
-  resetGame,
 }) => {
   const currentQuestion = questions[step];
 
@@ -61,10 +60,12 @@ const GameScreen: React.FC<Props> = ({
     return null;
   };
 
-  if (step >= GameConfig.MAX_MISTAKES_COUNT || !currentQuestion) {
-    resetGame();
+  if (mistakesCount >= GameConfig.MAX_MISTAKES_COUNT) {
+    return <Redirect to={AppRoute.LOSE} />;
+  }
 
-    return <Redirect to={AppRoute.ROOT} />;
+  if (step >= questions.length || !currentQuestion) {
+    return <Redirect to={AppRoute.RESULT} />;
   }
 
   return (
@@ -86,9 +87,6 @@ export default connect(
     onAnswer: (question: GameQuestion, answer: GameAnswer) => {
       dispatch(GameActionCreator.incrementStep());
       dispatch(GameActionCreator.incrementMistake(question, answer));
-    },
-    resetGame: () => {
-      dispatch(GameActionCreator.resetGame());
-    },
+    }
   })
 )(GameScreen);
