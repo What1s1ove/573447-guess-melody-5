@@ -1,12 +1,17 @@
-import { GameActionType } from '~/common/enums/enums';
-import { GameAction } from '~/common/types/types';
+import { generateQuestions } from '~/mocks/helpers/helpers';
+import { GameActionType, GameConfig } from '~/common/enums/enums';
+import { GameAction, GameQuestion } from '~/common/types/types';
+
+const questions = generateQuestions(GameConfig.QUESTION_COUNT);
 
 type GameState = {
+  questions: GameQuestion[];
   step: number;
   mistakesCount: number;
 };
 
 const initialState: GameState = {
+  questions,
   step: 0,
   mistakesCount: 0,
 };

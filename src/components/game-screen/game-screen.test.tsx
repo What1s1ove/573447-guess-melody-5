@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 import { render } from 'enzyme';
-import { store, mockedQuestions } from '~/mocks/mocks';
+import { store } from '~/mocks/mocks';
 import GameScreen from './game-screen';
 
 describe(`GameScreen component`, () => {
@@ -10,7 +10,7 @@ describe(`GameScreen component`, () => {
     const component = render(
       <Provider store={store}>
         <MemoryRouter>
-          <GameScreen questions={mockedQuestions} />
+          <GameScreen />
         </MemoryRouter>
       </Provider>
     );
