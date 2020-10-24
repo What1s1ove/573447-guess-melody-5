@@ -62,24 +62,4 @@ describe(`Game reducer works correctly`, () => {
       mistakesCount: incrementCount,
     });
   });
-
-  it(`Increment mistake case works correctly if mistakes more the max count`, () => {
-    expect(
-      gameReducer(
-        {
-          step: 0,
-          mistakesCount: 2,
-        },
-        {
-          type: GameActionType.INCREMENT_MISTAKES,
-          payload: {
-            incrementMistakeCount: 1,
-          },
-        }
-      )
-    ).toEqual({
-      step: 0,
-      mistakesCount: 0,
-    });
-  });
 });
