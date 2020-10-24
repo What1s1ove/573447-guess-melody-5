@@ -1,14 +1,10 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { GameActionCreator } from '~/store/actions/actions';
 import { RootState } from '~/store/reducer.root';
 import { AppRoute, GameConfig, QuestionType } from '~/common/enums/enums';
-import {
-  GameQuestion,
-  UserAnswerCb,
-  GameAnswer,
-} from '~/common/types/types';
+import { GameQuestion, GameAnswer } from '~/common/types/types';
 import withActivePlayer from '~/hocs/with-audio-player/with-audio-player';
 import withUserAnswer from '~/hocs/with-user-answer/with-user-answer';
 import GameHeader from '~/components/game-header/game-header';
@@ -21,19 +17,21 @@ const GenreQuestionScreenWrapped = withUserAnswer(
 const ArtistQuestionScreenWrapped = withActivePlayer(ArtistQuestionScreen);
 
 type Props = {
-  step: number;
-  mistakesCount: number;
   questions: GameQuestion[];
-  onAnswer: UserAnswerCb;
 };
 
-const GameScreen: React.FC<Props> = ({
-  step,
-  questions,
-  mistakesCount,
-  onAnswer,
-}) => {
+const GameScreen: React.FC<Props> = ({ questions }) => {
+  const { step, mistakesCount } = useSelector(({ game }: RootState) => ({
+    step: game.step,
+    mistakesCount: game.mistakesCount,
+  }));
+  const dispatch = useDispatch();
   const currentQuestion = questions[step];
+
+  const handleAnswer = (question: GameQuestion, answer: GameAnswer) => {
+    dispatch(GameActionCreator.incrementStep());
+    dispatch(GameActionCreator.incrementMistake(question, answer));
+  };
 
   const getScreen = (question: GameQuestion) => {
     switch (question.type) {
@@ -41,7 +39,7 @@ const GameScreen: React.FC<Props> = ({
         return (
           <GenreQuestionScreenWrapped
             key={question.id}
-            onAnswer={onAnswer}
+            onAnswer={handleAnswer}
             question={question}
           />
         );
@@ -50,7 +48,7 @@ const GameScreen: React.FC<Props> = ({
         return (
           <ArtistQuestionScreenWrapped
             key={question.id}
-            onAnswer={onAnswer}
+            onAnswer={handleAnswer}
             question={question}
           />
         );
@@ -76,17 +74,4 @@ const GameScreen: React.FC<Props> = ({
   );
 };
 
-export { GameScreen };
-
-export default connect(
-  ({ game }: RootState) => ({
-    step: game.step,
-    mistakesCount: game.mistakesCount,
-  }),
-  (dispatch) => ({
-    onAnswer: (question: GameQuestion, answer: GameAnswer) => {
-      dispatch(GameActionCreator.incrementStep());
-      dispatch(GameActionCreator.incrementMistake(question, answer));
-    }
-  })
-)(GameScreen);
+export default GameScreen;
