@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { AppRoute } from '~/common/enums/enums';
 import { GameActionCreator } from '~/store/actions/actions';
+import { AppRoute } from '~/common/enums/enums';
 
 const GameOverScreen = () => {
   const history = useHistory();
