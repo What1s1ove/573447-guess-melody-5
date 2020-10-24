@@ -11,8 +11,8 @@ describe(`GenreQuestionScreen component`, () => {
         userAnswers={[]}
         question={mockedGenreQuestion}
         renderPlayer={jest.fn()}
-        onUserAnswer={jest.fn()}
-        onAnswerChange={onSubmit}
+        onUserAnswer={onSubmit}
+        onAnswerChange={jest.fn()}
       />
     );
 
