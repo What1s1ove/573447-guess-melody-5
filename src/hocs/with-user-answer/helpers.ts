@@ -1,4 +1,4 @@
-import { IGenreQuestionAnswer } from '~/common/interfaces/interfaces';
+import { IGenreQuestionAnswer } from '~/common/interfaces/game/game';
 import { GenreQuestionUserAnswers } from '~/common/types/types';
 
 const getUpdatedAnswers = (
@@ -19,4 +19,4 @@ const generateDefaultUserAnswers = (answers: IGenreQuestionAnswer[]) => {
   return defaultUserAnswers;
 };
 
-export { generateDefaultUserAnswers, getUpdatedAnswers };
+export { getUpdatedAnswers, generateDefaultUserAnswers };

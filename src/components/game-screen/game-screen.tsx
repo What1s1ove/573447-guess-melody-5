@@ -11,11 +11,12 @@ import {
   BindingCb,
 } from '~/common/types/types';
 import withActivePlayer from '~/hocs/with-audio-player/with-audio-player';
+import withUserAnswer from '~/hocs/with-user-answer/with-user-answer';
 import GameHeader from '~/components/game-header/game-header';
 import GenreQuestionScreen from '~/components/genre-question-screen/genre-question-screen';
 import ArtistQuestionScreen from '~/components/artist-question-screen/artist-question-screen';
 
-const GenreQuestionScreenWrapped = withActivePlayer(GenreQuestionScreen);
+const GenreQuestionScreenWrapped = withUserAnswer(withActivePlayer(GenreQuestionScreen));
 const ArtistQuestionScreenWrapped = withActivePlayer(ArtistQuestionScreen);
 
 type Props = {

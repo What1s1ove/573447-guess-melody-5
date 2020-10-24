@@ -6,4 +6,6 @@ type InputChangeEvent = ChangeEvent<HTMLInputElement>;
 
 type FormEvent = React.FormEvent<HTMLFormElement>;
 
-export { ChangeEvent, InputChangeEvent, FormEvent };
+type FormSubmitCb = (evt: FormEvent) => void;
+
+export { ChangeEvent, InputChangeEvent, FormEvent, FormSubmitCb };

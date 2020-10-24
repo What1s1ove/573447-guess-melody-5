@@ -1,4 +1,9 @@
-import { RenderPlayerCb } from '~/common/types/game/game';
+import {
+  ChangeGenreQuestionAnswerCb,
+  GenreQuestionUserAnswers,
+  RenderPlayerCb,
+} from '~/common/types/game/game';
+import { FormSubmitCb } from '~/common/types/event/event';
 
 type WithActivePlayer = {
   renderPlayer: RenderPlayerCb;
@@ -8,4 +13,10 @@ type WithAudio = {
   isLoading: boolean;
 };
 
-export { WithActivePlayer, WithAudio };
+type WithUserAnswers = {
+  userAnswers: GenreQuestionUserAnswers;
+  onAnswerChange: ChangeGenreQuestionAnswerCb;
+  onUserAnswer: FormSubmitCb;
+};
+
+export { WithActivePlayer, WithAudio, WithUserAnswers };
