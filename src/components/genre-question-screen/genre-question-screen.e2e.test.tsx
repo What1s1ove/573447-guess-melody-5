@@ -8,9 +8,11 @@ describe(`GenreQuestionScreen component`, () => {
     const onSubmit = jest.fn();
     const component = shallow(
       <GenreQuestionScreen
-        onAnswer={onSubmit}
+        userAnswers={[]}
         question={mockedGenreQuestion}
         renderPlayer={jest.fn()}
+        onUserAnswer={onSubmit}
+        onAnswerChange={jest.fn()}
       />
     );
 

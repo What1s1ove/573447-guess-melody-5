@@ -8,6 +8,7 @@ describe(`AudioPlayer component`, () => {
     const component = shallow(
       <AudioPlayer
         isPlaying={false}
+        isLoading={false}
         onPlayBtnClick={onPlayBtnClick}
         src="play.src"
       />

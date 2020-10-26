@@ -22,7 +22,7 @@ exports[`WinScreen component should render WinScreen component 1`] = `
   <p
     class="result__total"
   >
-    Вы ответили правильно на 6 вопросов и совершили 2 ошибки
+    Вы ответили правильно на 0 вопросов и совершили 1 ошибки
   </p>
   <button
     class="replay"

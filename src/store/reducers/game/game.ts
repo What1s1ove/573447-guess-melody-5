@@ -1,12 +1,17 @@
+import { generateQuestions } from '~/mocks/helpers/helpers';
 import { GameActionType, GameConfig } from '~/common/enums/enums';
-import { GameAction } from '~/common/types/types';
+import { GameAction, GameQuestion } from '~/common/types/types';
+
+const questions = generateQuestions(GameConfig.QUESTION_COUNT);
 
 type GameState = {
+  questions: GameQuestion[];
   step: number;
   mistakesCount: number;
 };
 
 const initialState: GameState = {
+  questions,
   step: 0,
   mistakesCount: 0,
 };
@@ -27,10 +32,6 @@ const gameReducer = (
     case GameActionType.INCREMENT_MISTAKES: {
       const { incrementMistakeCount } = action.payload;
       const updatedMistakesCount = state.mistakesCount + incrementMistakeCount;
-
-      if (updatedMistakesCount >= GameConfig.MAX_MISTAKES_COUNT) {
-        return initialState;
-      }
 
       return {
         ...state,

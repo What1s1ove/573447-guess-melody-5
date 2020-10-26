@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MistakesList component should render MistakesList component 1`] = `
+<div
+  class="game__mistakes"
+>
+  <div
+    class="wrong"
+  />
+</div>
+`;
