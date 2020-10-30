@@ -8,12 +8,16 @@ import {
   UserActionCreator,
 } from '~/store/actions/actions';
 
-dispatch(GameDataActionCreator.fetchQuestions());
-dispatch(UserActionCreator.checkAuth());
+const init = () => {
+  ReactDOM.render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    document.querySelector(`#root`)
+  );
+};
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.querySelector(`#root`)
-);
+Promise.all([
+  dispatch(GameDataActionCreator.fetchQuestions()),
+  dispatch(UserActionCreator.checkAuth()),
+]).then(() => init());
