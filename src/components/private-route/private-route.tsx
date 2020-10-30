@@ -4,23 +4,18 @@ import { useSelector } from 'react-redux';
 import { AppRoute, AuthStatus } from '~/common/enums/enums';
 import { RootState } from '~/store/reducer.root';
 
-const PrivateRoute: React.FC<RouteProps> = ({ render, path, exact }) => {
+const PrivateRoute: React.FC<RouteProps> = (props) => {
   const { authStatus } = useSelector(({ user }: RootState) => ({
     authStatus: user.status,
   }));
 
-  return (
-    <Route
-      path={path}
-      exact={exact}
-      render={(routeProps) =>
-        authStatus === AuthStatus.AUTH ? (
-          render && render(routeProps)
-        ) : (
-          <Redirect to={AppRoute.LOGIN} />
-        )}
-    />
-  );
+  const isLogin = authStatus === AuthStatus.AUTH;
+
+  if (!isLogin) {
+    return <Redirect to={AppRoute.LOGIN} />;
+  }
+
+  return <Route {...props} />;
 };
 
 export default PrivateRoute;

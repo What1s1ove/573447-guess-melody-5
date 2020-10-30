@@ -6,25 +6,16 @@ import GameScreen from '~/components/game-screen/game-screen';
 import AuthScreen from '~/components/auth-screen/auth-screen';
 import GameOverScreen from '~/components/game-over-screen/game-over-screen';
 import WinScreen from '~/components/win-screen/win-screen';
+import PrivateRoute from '~/components/private-route/private-route';
 
 const App: React.FC = () => (
   <BrowserRouter>
     <Switch>
-      <Route exact path={AppRoute.ROOT}>
-        <WelcomeScreen />
-      </Route>
-      <Route exact path={AppRoute.LOGIN}>
-        <AuthScreen />
-      </Route>
-      <Route exact path={AppRoute.GAME}>
-        <GameScreen />
-      </Route>
-      <Route exact path={AppRoute.RESULT}>
-        <WinScreen />
-      </Route>
-      <Route exact path={AppRoute.LOSE}>
-        <GameOverScreen />
-      </Route>
+      <Route path={AppRoute.ROOT} component={WelcomeScreen} exact />
+      <Route path={AppRoute.LOGIN} component={AuthScreen} exact />
+      <Route path={AppRoute.GAME} component={GameScreen} exact />
+      <Route path={AppRoute.LOSE} component={GameOverScreen} exact />
+      <PrivateRoute path={AppRoute.RESULT} component={WinScreen} exact />
     </Switch>
   </BrowserRouter>
 );
