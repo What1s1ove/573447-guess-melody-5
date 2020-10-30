@@ -1,15 +1,12 @@
-import { generateQuestions } from '~/mocks/helpers/helpers';
-import { GameConfig, GameDataActionType } from '~/common/enums/enums';
+import { GameDataActionType } from '~/common/enums/enums';
 import { GameDataAction, GameQuestion } from '~/common/types/types';
-
-const gameQuestions = generateQuestions(GameConfig.QUESTION_COUNT);
 
 type GameDataState = {
   questions: GameQuestion[];
 };
 
 const initialState: GameDataState = {
-  questions: gameQuestions,
+  questions: [],
 };
 
 const gameDataReducer = (
