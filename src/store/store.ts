@@ -5,6 +5,7 @@ import { createAPI } from '~/services/api/api';
 import { AuthStatus } from '~/common/enums/enums';
 import { AppDispatch } from '~/common/types/types';
 import { UserActionCreator } from '~/store/actions/actions';
+import { redirect } from '~/store/middlewares/middlewares';
 import rootReducer from './reducer.root';
 
 const api = createAPI({
@@ -21,7 +22,8 @@ const store = createStore(
       thunk.withExtraArgument({
         api,
       })
-    )
+    ),
+    applyMiddleware(redirect)
   )
 );
 
