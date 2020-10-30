@@ -3,7 +3,7 @@ import { GameDataActionType } from '~/common/enums/enums';
 import { gameDataReducer } from './game-data';
 
 describe(`Game reducer works correctly`, () => {
-  it(`loadOffers case works correctly`, () => {
+  it(`loadQuestions case works correctly`, () => {
     expect(
       gameDataReducer(
         {
