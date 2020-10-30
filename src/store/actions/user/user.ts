@@ -16,6 +16,14 @@ const UserActionCreator: UserAC = {
         throw err;
       });
   },
+  login: ({ email, password }) => (dispatch, _, { api }) => {
+    api
+      .post(`/login`, { email, password })
+      .then(() => dispatch(UserActionCreator.setAuthStatus(AuthStatus.AUTH)))
+      .catch((err: Error) => {
+        throw err;
+      });
+  },
 };
 
 export { UserActionCreator };
