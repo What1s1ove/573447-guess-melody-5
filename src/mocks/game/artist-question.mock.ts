@@ -14,7 +14,6 @@ const mockedArtistQuestion: IArtistQuestion = {
     },
     mockedArtistQuestionAnswer,
   ],
-  id: `1`,
   song: {
     artist: `Jim Beam`,
     src: `https://upload.wikimedia.org/wikipedia/commons/4/4e/BWV_543-fugue.ogg`,

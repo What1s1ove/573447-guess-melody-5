@@ -15,7 +15,6 @@ const mockedGenreQuestion: IGenreQuestion = {
     mockedGenreQuestionAnswer,
   ],
   genre: `jazz`,
-  id: `1`,
   type: QuestionType.GENRE,
 };
 
