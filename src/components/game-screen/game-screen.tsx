@@ -17,8 +17,8 @@ const GenreQuestionScreenWrapped = withUserAnswer(
 const ArtistQuestionScreenWrapped = withActivePlayer(ArtistQuestionScreen);
 
 const GameScreen: React.FC = () => {
-  const { questions, step, mistakesCount } = useSelector(({ game }: RootState) => ({
-    questions: game.questions,
+  const { questions, step, mistakesCount } = useSelector(({ game, data }: RootState) => ({
+    questions: data.questions,
     step: game.step,
     mistakesCount: game.mistakesCount,
   }));
