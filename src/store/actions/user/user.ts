@@ -1,4 +1,4 @@
-import { AuthStatus, UserActionType } from '~/common/enums/enums';
+import { AppRoute, AuthStatus, UserActionType } from '~/common/enums/enums';
 import { UserAC } from '~/common/types/types';
 
 const UserActionCreator: UserAC = {
@@ -6,6 +6,12 @@ const UserActionCreator: UserAC = {
     type: UserActionType.SET_AUTH_STATUS,
     payload: {
       status,
+    },
+  }),
+  redirectToRoute: (path) => ({
+    type: UserActionType.REDIRECT_TO_ROUTE,
+    payload: {
+      path,
     },
   }),
   checkAuth: () => (dispatch, _, { api }) => {
@@ -20,6 +26,7 @@ const UserActionCreator: UserAC = {
     api
       .post(`/login`, { email, password })
       .then(() => dispatch(UserActionCreator.setAuthStatus(AuthStatus.AUTH)))
+      .then(() => dispatch(UserActionCreator.redirectToRoute(AppRoute.RESULT)))
       .catch((err: Error) => {
         throw err;
       });

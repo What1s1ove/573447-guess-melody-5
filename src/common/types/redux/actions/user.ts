@@ -1,4 +1,4 @@
-import { UserActionType, AuthStatus } from '~/common/enums/enums';
+import { UserActionType, AuthStatus, AppRoute } from '~/common/enums/enums';
 
 type SetAuthStatusAction = {
   type: UserActionType.SET_AUTH_STATUS;
@@ -7,6 +7,13 @@ type SetAuthStatusAction = {
   };
 };
 
-type UserAction = SetAuthStatusAction;
+type RedirectToRouteAction = {
+  type: UserActionType.REDIRECT_TO_ROUTE;
+  payload: {
+    path: AppRoute;
+  };
+};
 
-export { SetAuthStatusAction, UserAction };
+type UserAction = SetAuthStatusAction | RedirectToRouteAction;
+
+export { SetAuthStatusAction, RedirectToRouteAction, UserAction };
