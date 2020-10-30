@@ -1,5 +1,4 @@
-import { UserActionType } from '~/common/enums/enums';
-import { AuthStatus } from '~/common/enums/user/user';
+import { UserActionType, AuthStatus } from '~/common/enums/enums';
 
 type SetAuthStatusAction = {
   type: UserActionType.SET_AUTH_STATUS;

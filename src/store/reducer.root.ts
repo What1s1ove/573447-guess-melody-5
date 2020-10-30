@@ -1,7 +1,12 @@
 import { combineReducers } from 'redux';
-import { gameReducer, gameDataReducer } from '~/store/reducers/reducers';
+import {
+  gameReducer,
+  gameDataReducer,
+  userReducer,
+} from '~/store/reducers/reducers';
 
 const rootReducer = combineReducers({
+  user: userReducer,
   data: gameDataReducer,
   game: gameReducer,
 });
