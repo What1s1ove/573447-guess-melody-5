@@ -1,4 +1,4 @@
-import { UserActionType } from '~/common/enums/enums';
+import { AuthStatus, UserActionType } from '~/common/enums/enums';
 import { UserAC } from '~/common/types/types';
 
 const UserActionCreator: UserAC = {
@@ -8,6 +8,14 @@ const UserActionCreator: UserAC = {
       status,
     },
   }),
+  checkAuth: () => (dispatch, _, { api }) => {
+    api
+      .get(`/login`)
+      .then(() => dispatch(UserActionCreator.setAuthStatus(AuthStatus.AUTH)))
+      .catch((err: Error) => {
+        throw err;
+      });
+  },
 };
 
 export { UserActionCreator };
