@@ -15,7 +15,13 @@ const api = createAPI({
 
 const store = createStore(
   rootReducer,
-  composeWithDevTools(applyMiddleware(thunk.withExtraArgument(api)))
+  composeWithDevTools(
+    applyMiddleware(
+      thunk.withExtraArgument({
+        api,
+      })
+    )
+  )
 );
 
 export default store;
