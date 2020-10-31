@@ -54,7 +54,7 @@ const AuthScreen = () => {
             onChange={handleFormChange}
             value={formState.email}
             name={AuthFormKey.EMAIL}
-            type="text"
+            type="email"
             id="name"
           />
         </p>
@@ -67,7 +67,7 @@ const AuthScreen = () => {
             name={AuthFormKey.PASSWORD}
             onChange={handleFormChange}
             value={formState.password}
-            type="text"
+            type="password"
             id="password"
           />
           <span className="login__error">Неверный пароль</span>
