@@ -40,7 +40,7 @@ exports[`AuthScreen component should render AuthScreen component 1`] = `
         class="login__input"
         id="name"
         name="email"
-        type="text"
+        type="email"
         value=""
       />
     </p>
@@ -57,7 +57,7 @@ exports[`AuthScreen component should render AuthScreen component 1`] = `
         class="login__input"
         id="password"
         name="password"
-        type="text"
+        type="password"
         value=""
       />
       <span
