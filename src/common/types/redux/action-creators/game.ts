@@ -3,7 +3,7 @@ import {
   IncrementMistakeAction,
   ResetGameAction,
 } from '~/common/types/redux/actions/game';
-import { GameAnswer, GameQuestion } from '../../game/game';
+import { GameAnswer, GameQuestion } from '~/common/types/game/game';
 
 type IncrementStepAc = () => IncrementStepAction;
 

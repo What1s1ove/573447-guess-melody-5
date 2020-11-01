@@ -23,7 +23,7 @@ Props & WithActivePlayer & WithUserAnswers
             isChecked={isChecked}
             renderPlayer={renderPlayer}
             onAnswerChange={onAnswerChange}
-            key={answer.genre}
+            key={answer.src}
           />
         );
       })}

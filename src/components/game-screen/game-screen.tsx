@@ -17,8 +17,8 @@ const GenreQuestionScreenWrapped = withUserAnswer(
 const ArtistQuestionScreenWrapped = withActivePlayer(ArtistQuestionScreen);
 
 const GameScreen: React.FC = () => {
-  const { questions, step, mistakesCount } = useSelector(({ game }: RootState) => ({
-    questions: game.questions,
+  const { questions, step, mistakesCount } = useSelector(({ game, data }: RootState) => ({
+    questions: data.questions,
     step: game.step,
     mistakesCount: game.mistakesCount,
   }));
@@ -35,7 +35,7 @@ const GameScreen: React.FC = () => {
       case QuestionType.GENRE: {
         return (
           <GenreQuestionScreenWrapped
-            key={question.id}
+            key={step}
             onAnswer={handleAnswer}
             question={question}
           />
@@ -44,7 +44,7 @@ const GameScreen: React.FC = () => {
       case QuestionType.ARTIST: {
         return (
           <ArtistQuestionScreenWrapped
-            key={question.id}
+            key={step}
             onAnswer={handleAnswer}
             question={question}
           />

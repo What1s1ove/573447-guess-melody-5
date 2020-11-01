@@ -18,8 +18,8 @@ const checkIsGenreAnswerCorrect = (
   question: IGenreQuestion,
   answers: GenreQuestionUserAnswers
 ) => {
-  const hasCorrectAnswer = answers.every((_, idx) => {
-    const isCorrect = question.answers[idx].genre === question.genre;
+  const hasCorrectAnswer = answers.every((answer, idx) => {
+    const isCorrect = answer === (question.answers[idx].genre === question.genre);
 
     return isCorrect;
   });

@@ -8,7 +8,6 @@ describe(`Game reducer works correctly`, () => {
     expect(
       gameReducer(
         {
-          questions: [],
           step: 0,
           mistakesCount: 0,
         },
@@ -20,7 +19,6 @@ describe(`Game reducer works correctly`, () => {
         }
       )
     ).toEqual({
-      questions: [],
       step: incrementCount,
       mistakesCount: 0,
     });
@@ -32,7 +30,6 @@ describe(`Game reducer works correctly`, () => {
     expect(
       gameReducer(
         {
-          questions: [],
           step: 0,
           mistakesCount: 0,
         },
@@ -44,7 +41,6 @@ describe(`Game reducer works correctly`, () => {
         }
       )
     ).toEqual({
-      questions: [],
       step: 0,
       mistakesCount: incrementCount,
     });

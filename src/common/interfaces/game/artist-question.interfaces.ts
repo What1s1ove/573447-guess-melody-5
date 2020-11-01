@@ -2,7 +2,6 @@ import { QuestionType } from '~/common/enums/enums';
 
 interface IArtistQuestion {
   answers: IArtistQuestionAnswer[];
-  id: string;
   song: IArtistQuestionSong;
   type: QuestionType.ARTIST;
 }
