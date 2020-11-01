@@ -9,9 +9,9 @@ const PrivateRoute: React.FC<RouteProps> = (props) => {
     authStatus: user.status,
   }));
 
-  const isLogin = authStatus === AuthStatus.AUTH;
+  const isLoggedIn = authStatus === AuthStatus.AUTH;
 
-  if (!isLogin) {
+  if (!isLoggedIn) {
     return <Redirect to={AppRoute.LOGIN} />;
   }
 
