@@ -1,4 +1,4 @@
-import { LoadQuestionsAction } from '~/common/types/redux/actions//game-data';
+import { LoadQuestionsAction } from '~/common/types/redux/actions/game-data';
 import { AppThunk } from '~/common/types/redux/thunk/thunk';
 import { GameQuestion } from '~/common/types/game/game';
 
