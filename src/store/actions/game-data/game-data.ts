@@ -13,7 +13,7 @@ const GameDataActionCreator: GameDataAC = {
       .get<GameQuestion[]>(`/questions`)
       .then(({ data }) => dispatch(GameDataActionCreator.loadQuestion(data)))
       .catch((err: Error) => {
-        throw err;
+        console.error(err.message);
       });
   },
 };

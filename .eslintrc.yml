@@ -48,6 +48,10 @@ rules:
         some:
         - nesting
         - id
+  no-console:
+    - error
+    - allow:
+      - error
   react/prop-types: off
   react/jsx-fragments: off
   react/jsx-props-no-spreading: off

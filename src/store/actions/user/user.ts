@@ -19,7 +19,7 @@ const UserActionCreator: UserAC = {
       .get(`/login`)
       .then(() => dispatch(UserActionCreator.setAuthStatus(AuthStatus.AUTH)))
       .catch((err: Error) => {
-        throw err;
+        console.error(err.message);
       });
   },
   login: ({ email, password }) => (dispatch, _, { api }) => {
@@ -28,7 +28,7 @@ const UserActionCreator: UserAC = {
       .then(() => dispatch(UserActionCreator.setAuthStatus(AuthStatus.AUTH)))
       .then(() => dispatch(UserActionCreator.redirectToRoute(AppRoute.RESULT)))
       .catch((err: Error) => {
-        throw err;
+        console.error(err.message);
       });
   },
 };
