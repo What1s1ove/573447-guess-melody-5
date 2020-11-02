@@ -1,4 +1,4 @@
-import { GameDataActionType } from '~/common/enums/enums';
+import { ApiRoute, GameDataActionType } from '~/common/enums/enums';
 import { GameDataAC, GameQuestion } from '~/common/types/types';
 
 const GameDataActionCreator: GameDataAC = {
@@ -10,7 +10,7 @@ const GameDataActionCreator: GameDataAC = {
   }),
   fetchQuestions: () => (dispatch, _, { api }) => {
     api
-      .get<GameQuestion[]>(`/questions`)
+      .get<GameQuestion[]>(ApiRoute.QUESTIONS)
       .then(({ data }) => dispatch(GameDataActionCreator.loadQuestion(data)))
       .catch((err: Error) => {
         console.error(err.message);
