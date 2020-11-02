@@ -1,7 +1,7 @@
 import { AuthStatus, UserActionType } from '~/common/enums/enums';
 import { userReducer } from './user';
 
-describe(`Game reducer works correctly`, () => {
+describe(`User reducer works correctly`, () => {
   it(`setAuthStatus case works correctly`, () => {
     expect(
       userReducer(

@@ -2,7 +2,7 @@ import { mockedQuestions } from '~/mocks/mocks';
 import { GameDataActionType } from '~/common/enums/enums';
 import { gameDataReducer } from './game-data';
 
-describe(`Game reducer works correctly`, () => {
+describe(`Game data reducer works correctly`, () => {
   it(`loadQuestions case works correctly`, () => {
     expect(
       gameDataReducer(
