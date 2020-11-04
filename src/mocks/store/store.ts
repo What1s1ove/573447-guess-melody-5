@@ -14,7 +14,7 @@ const store = storeConfig({
     mistakesCount: 1,
   },
   user: {
-    status: AuthStatus.NO_AUTH,
+    status: AuthStatus.AUTH,
   },
 });
 
