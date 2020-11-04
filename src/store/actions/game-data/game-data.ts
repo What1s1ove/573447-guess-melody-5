@@ -8,14 +8,14 @@ const GameDataActionCreator: GameDataAC = {
       questions,
     },
   }),
-  fetchQuestions: () => (dispatch, _, { api }) => {
+  fetchQuestions: () => (dispatch, _, { api }) => (
     api
       .get<GameQuestion[]>(ApiRoute.QUESTIONS)
       .then(({ data }) => dispatch(GameDataActionCreator.loadQuestion(data)))
       .catch((err: Error) => {
         console.error(err.message);
-      });
-  },
+      })
+  ),
 };
 
 export { GameDataActionCreator };

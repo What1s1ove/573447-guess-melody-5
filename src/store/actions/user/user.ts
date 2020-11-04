@@ -19,23 +19,23 @@ const UserActionCreator: UserAC = {
       path,
     },
   }),
-  checkAuth: () => (dispatch, _, { api }) => {
+  checkAuth: () => (dispatch, _, { api }) => (
     api
       .get(ApiRoute.LOGIN)
       .then(() => dispatch(UserActionCreator.setAuthStatus(AuthStatus.AUTH)))
       .catch((err: Error) => {
         console.error(err.message);
-      });
-  },
-  login: ({ email, password }) => (dispatch, _, { api }) => {
+      })
+  ),
+  login: ({ email, password }) => (dispatch, _, { api }) => (
     api
       .post(ApiRoute.LOGIN, { email, password })
       .then(() => dispatch(UserActionCreator.setAuthStatus(AuthStatus.AUTH)))
       .then(() => dispatch(UserActionCreator.redirectToRoute(AppRoute.RESULT)))
       .catch((err: Error) => {
         console.error(err.message);
-      });
-  },
+      })
+  ),
 };
 
 export { UserActionCreator };
