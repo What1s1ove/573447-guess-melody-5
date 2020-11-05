@@ -59,6 +59,7 @@ describe(`User action creator works correctly`, () => {
           status: AuthStatus.AUTH,
         },
       });
+
       expect(dispatch).toHaveBeenNthCalledWith(2, {
         type: UserActionType.REDIRECT_TO_ROUTE,
         payload: {
