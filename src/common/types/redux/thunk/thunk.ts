@@ -7,7 +7,7 @@ type ExtraArgs = {
   api: ReturnType<typeof createAPI>;
 };
 
-type AppThunk = ThunkAction<void, RootState, ExtraArgs, AnyAction>;
+type AppThunk<T> = ThunkAction<Promise<void | T>, RootState, ExtraArgs, AnyAction>;
 
 type AppDispatch = ThunkDispatch<RootState, ExtraArgs, AnyAction>;
 

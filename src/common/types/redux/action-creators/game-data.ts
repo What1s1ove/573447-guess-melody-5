@@ -4,7 +4,7 @@ import { GameQuestion } from '~/common/types/game/game';
 
 type LoadQuestionAc = (question: GameQuestion[]) => LoadQuestionsAction;
 
-type FetchQuestions = () => AppThunk;
+type FetchQuestions = () => AppThunk<LoadQuestionsAction>;
 
 type GameDataAC = {
   loadQuestion: LoadQuestionAc;

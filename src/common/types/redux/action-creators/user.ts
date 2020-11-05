@@ -10,9 +10,9 @@ type SetAuthStatusAc = (status: AuthStatus) => SetAuthStatusAction;
 
 type RedirectToRouteAc = (path: AppRoute) => RedirectToRouteAction;
 
-type CheckAuthAc = () => AppThunk;
+type CheckAuthAc = () => AppThunk<SetAuthStatusAction>;
 
-type LoginAc = (authData: IUserAuthData) => AppThunk;
+type LoginAc = (authData: IUserAuthData) => AppThunk<RedirectToRouteAction>;
 
 type UserAC = {
   setAuthStatus: SetAuthStatusAc;
