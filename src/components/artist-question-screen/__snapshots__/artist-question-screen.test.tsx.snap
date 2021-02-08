@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArtistQuestionScreen component should render ArtistQuestionScreen component 1`] = `
+<section
+  class="game__screen"
+>
+  <h2
+    class="game__title"
+  >
+    Кто исполняет эту песню?
+  </h2>
+  <div
+    class="game__track"
+  >
+    <div
+      class="track"
+    />
+  </div>
+  <form
+    class="game__artist"
+  >
+    <div
+      class="artist"
+    >
+      <label
+        class="artist__name"
+        for="answer-0"
+      >
+        <input
+          class="artist__input visually-hidden"
+          id="answer-0"
+          type="radio"
+        />
+        <img
+          alt="John Snow"
+          class="artist__picture"
+          src="https://via.placeholder.com/135"
+        />
+        John Snow
+      </label>
+    </div>
+    <div
+      class="artist"
+    >
+      <label
+        class="artist__name"
+        for="answer-1"
+      >
+        <input
+          class="artist__input visually-hidden"
+          id="answer-1"
+          type="radio"
+        />
+        <img
+          alt="Jim Beam"
+          class="artist__picture"
+          src="https://via.placeholder.com/135"
+        />
+        Jim Beam
+      </label>
+    </div>
+    <div
+      class="artist"
+    >
+      <label
+        class="artist__name"
+        for="answer-2"
+      >
+        <input
+          class="artist__input visually-hidden"
+          id="answer-2"
+          type="radio"
+        />
+        <img
+          alt="Jack Daniels"
+          class="artist__picture"
+          src="https://via.placeholder.com/135"
+        />
+        Jack Daniels
+      </label>
+    </div>
+  </form>
+</section>
+`;

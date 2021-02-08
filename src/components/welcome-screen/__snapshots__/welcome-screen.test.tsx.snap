@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WelcomeScreen component should render WelcomeScreen component 1`] = `
+<section
+  class="welcome"
+>
+  <div
+    class="welcome__logo"
+  >
+    <img
+      alt="Угадай мелодию"
+      height="83"
+      src="img/melody-logo.png"
+      width="186"
+    />
+  </div>
+  <a
+    class="welcome__button"
+    href="/game"
+  >
+    <span
+      class="visually-hidden"
+    >
+      Начать игру
+    </span>
+  </a>
+  <h2
+    class="welcome__rules-title"
+  >
+    Правила игры
+  </h2>
+  <p
+    class="welcome__text"
+  >
+    Правила просты:
+  </p>
+  <ul
+    class="welcome__rules-list"
+  >
+    <li>
+      Нужно ответить на все вопросы.
+    </li>
+    <li>
+      Можно допустить 3 ошибки.
+    </li>
+  </ul>
+  <p
+    class="welcome__text"
+  >
+    Удачи!
+  </p>
+</section>
+`;

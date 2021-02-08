@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AuthScreen component should render AuthScreen component 1`] = `
+<section
+  class="login"
+>
+  <div
+    class="login__logo"
+  >
+    <img
+      alt="Угадай мелодию"
+      height="83"
+      src="img/melody-logo.png"
+      width="186"
+    />
+  </div>
+  <h2
+    class="login__title"
+  >
+    Вы настоящий меломан!
+  </h2>
+  <p
+    class="login__text"
+  >
+    Хотите узнать свой результат? Представьтесь!
+  </p>
+  <form
+    class="login__form"
+  >
+    <p
+      class="login__field"
+    >
+      <label
+        class="login__label"
+        for="name"
+      >
+        Логин
+      </label>
+      <input
+        class="login__input"
+        id="name"
+        name="email"
+        type="email"
+        value=""
+      />
+    </p>
+    <p
+      class="login__field"
+    >
+      <label
+        class="login__label"
+        for="password"
+      >
+        Пароль
+      </label>
+      <input
+        class="login__input"
+        id="password"
+        name="password"
+        type="password"
+        value=""
+      />
+      <span
+        class="login__error"
+      >
+        Неверный пароль
+      </span>
+    </p>
+    <button
+      class="login__button button"
+      type="submit"
+    >
+      Войти
+    </button>
+  </form>
+  <button
+    class="replay"
+    type="button"
+  >
+    Сыграть ещё раз
+  </button>
+</section>
+`;

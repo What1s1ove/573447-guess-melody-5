@@ -1,6 +1,62 @@
 env:
   es6: true
   browser: true
+  jest: true
   commonjs: true
 
-extends: 'htmlacademy/es6'
+extends:
+  - htmlacademy/es6
+  - airbnb-typescript
+  - prettier
+
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: 6
+  sourceType: module
+  project: ./tsconfig.json
+
+plugins:
+  - react
+
+settings:
+  alias:
+    extensions: ['.ts']
+    map:
+      - ['~', './src']
+  import/resolver:
+    node:
+      extensions: ['.js', '.jsx', '.ts', '.tsx']
+  react:
+    version: '16'
+
+rules:
+  '@typescript-eslint/quotes':
+    - error
+    - backtick
+  '@typescript-eslint/comma-dangle':
+    - error
+    - only-multiline
+    - arrays: never
+      objects: always
+      imports: never
+      exports: never
+      functions: never
+  jsx-a11y/label-has-associated-control:
+    - error
+    - required:
+        some:
+        - nesting
+        - id
+  no-console:
+    - error
+    - allow:
+      - error
+  react/prop-types: off
+  react/jsx-fragments: off
+  react/jsx-props-no-spreading: off
+  import/prefer-default-export: off
+  default-case: off
+  import/extensions: off
+  # because of prettier
+  react/jsx-one-expression-per-line: off

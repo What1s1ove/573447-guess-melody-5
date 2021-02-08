@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GenreQuestionAnswer component should render GenreQuestionAnswer component 1`] = `
+<div
+  class="track"
+>
+  <div
+    class="game__answer"
+  >
+    <input
+      checked=""
+      class="game__input visually-hidden"
+      id="answer-1"
+      name="answer"
+      type="checkbox"
+      value="1"
+    />
+    <label
+      class="game__check"
+      for="answer-1"
+    >
+      Отметить
+    </label>
+  </div>
+</div>
+`;
